@@ -281,18 +281,16 @@
 </section>
 
 <section id="subscribe">
-    <form action="https://formspree.io/f/xdalygyw" method="POST" class="subscribe-wrapper reveal">
+    <div class="subscribe-wrapper reveal">
         <h2 class="section-title" style="margin-bottom: 10px; text-align: center;">Join The Canopy</h2>
         <p style="color: #888; margin-bottom: 20px;">Receive secret chapters and early releases directly in your inbox.</p>
         
-        <div class="sub-input-group">
+        <form id="my-form" class="sub-input-group">
             <input type="email" name="email" placeholder="Enter your email address" required>
-            
-            <input type="hidden" name="_next" value="https://esther-gracekimotho.github.io/wild-canopy/inner-circle.html">
-            
             <button type="submit">SUBSCRIBE</button>
-        </div>
-    </form>
+        </form>
+        <p id="my-form-status" style="margin-top: 15px; color: var(--gold); font-family: 'Playfair Display', serif; font-style: italic; display: none;"></p>
+    </div>
 </section>
 
 <section id="contact">
@@ -354,6 +352,34 @@
         }, revealOptions);
         reveals.forEach(reveal => revealOnScroll.observe(reveal));
     });
+
+    // BACKGROUND FORMSPREE SUBMISSION (NO MORE REDIRECT PAGE)
+    var form = document.getElementById("my-form");
+    var statusMsg = document.getElementById("my-form-status");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      statusMsg.style.display = "block";
+      statusMsg.innerHTML = "Opening the canopy...";
+      
+      var data = new FormData(event.target);
+      fetch("https://formspree.io/f/xdalygyw", {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = "inner-circle.html"; // Instantly teleports them!
+        } else {
+          statusMsg.innerHTML = "Oops! There was a problem joining.";
+        }
+      }).catch(error => {
+        statusMsg.innerHTML = "Oops! There was a problem joining.";
+      });
+    }
+    form.addEventListener("submit", handleSubmit);
 </script>
 
 </body>
