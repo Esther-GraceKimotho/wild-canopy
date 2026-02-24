@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almost, Then Always | Chapter 1</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --emerald-bg: #03120a;
+            --gold: #d4af37;
+            --text-light: #e0e0e0;
+            --paper: #0a1c12; 
+        }
+
+        body {
+            background-color: var(--emerald-bg);
+            color: var(--text-light);
+            font-family: 'Lora', serif;
+            line-height: 2;
+            font-size: 1.15rem;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Top Navigation Bar */
+        .reader-nav {
+            padding: 20px 5%;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(3, 18, 10, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .back-btn {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { color: #fff; }
+
+        /* The Reading Canvas */
+        .reading-container {
+            max-width: 750px; 
+            margin: 60px auto;
+            padding: 60px 80px;
+            background-color: var(--paper);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 5px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        /* Chapter Headings */
+        .chapter-title {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .book-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 60px;
+        }
+
+        /* Story Text Format */
+        .story-text p {
+            margin-bottom: 25px;
+            text-indent: 30px; 
+            color: #d1d1d1;
+        }
+
+        .story-text p:first-of-type {
+            text-indent: 0; 
+        }
+
+        .story-text p:first-of-type::first-letter {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 4rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 12px;
+            margin-top: 8px;
+        }
+
+        /* Subscription Block */
+        .hook-canopy {
+            margin-top: 80px;
+            padding-top: 50px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+        }
+
+        .hook-canopy h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .hook-canopy p {
+            color: #888;
+            margin-bottom: 40px;
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            text-indent: 0;
+        }
+
+        .subscribe-btn {
+            padding: 15px 35px;
+            background: var(--gold);
+            color: #000;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
+        .subscribe-btn:hover {
+            background: #fff;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .reading-container { margin: 20px; padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reader-nav">
+        <a href="index.html" class="back-btn">← Return to the Canopy</a>
+    </div>
+
+    <div class="reading-container">
+        <h1 class="chapter-title">Chapter 1</h1>
+        <p class="book-title">The First Move</p>
+
+        <div class="story-text">
+            <p>I didn’t know I was falling when it started. If you had asked me that afternoon, I would have said it was curiosity. Maybe boredom. Maybe a coincidence. But love rarely announces itself as love. It begins as something smaller. A pause. A question. A decision to sit down instead of walking away. And sometimes, the most dangerous thing a person can do is choose to stay.</p>
+
+            <p>The university courtyard was louder than usual that afternoon. Students moved in restless clusters, voices rising and falling like waves that never quite reached the shore. Someone was laughing too loudly near the fountain. A group of first-years sat cross-legged on the grass, arguing about something trivial but urgent. The smell of fried snacks drifted from the food stalls near the main gate.</p>
+
+            <p>Elena crossed the courtyard with a file tucked under her arm, her steps quick but unhurried. She had just left a lecture on constitutional theory, and her mind was still tangled in arguments about rights, duties, and the strange ways law tried to organize human behavior. She liked law. Or at least, she liked the idea of it. The precision. The logic. The promise that even chaos could be shaped into something understandable. But sometimes the lectures felt too abstract, too removed from the messy reality of people.</p>
+
+            <p>She sighed quietly and adjusted her grip on the file. Maybe she just needed tea. Or silence. Or both. Her eyes scanned the courtyard without really focusing on anything in particular—just a habit she had developed over the years. She liked observing people. Not in a strange way. Just enough to imagine what their lives might be like. The girl with the red braids near the fountain probably overslept most mornings. The tall boy in the oversized hoodie definitely played video games until 3 a.m. The couple sitting too close together on the bench were either deeply in love or two weeks away from a messy breakup.</p>
+
+            <p>Elena almost smiled at the thought. Then she noticed the chess table.</p>
+
+            <p>It wasn’t the board itself that caught her attention. The tables were always there, tucked under the jacaranda tree near the library steps. Some days they were crowded. Other days, completely empty. Today, only one of them was occupied.</p>
+
+            <p>A young man sat alone, leaning slightly forward, his elbows resting near the edge of the table. The sleeves of his shirt were rolled neatly to his forearms. His attention was fixed entirely on the chessboard in front of him. There was no one sitting across from him. He was playing both sides.</p>
+
+            <p>Elena slowed down without realizing it. Something about the scene felt strangely quiet, even though the courtyard was full of noise. It was as if the space around that table had its own atmosphere—calmer, slower, more deliberate. He moved one of the black pieces, then leaned back slightly and studied the board. After a moment, he leaned forward again and shifted a white pawn. No rush. No frustration. Just patience.</p>
+
+            <p>She wasn’t interested in chess. Not really. She barely remembered how the pieces moved. But there was something about the way he played—like he had all the time in the world—that made her pause. She should keep walking. She had notes to review. A tutorial later in the afternoon. A long reading list waiting for her in her hostel room.</p>
+
+            <p>But instead of continuing across the courtyard, she found herself drifting toward the chess table. She stopped a few steps away.</p>
+
+            <p>He didn’t notice her at first. Or if he did, he didn’t react. His eyes stayed on the board, calculating, thoughtful.</p>
+
+            <p>“You’re playing both sides?” she asked.</p>
+
+            <p>He didn’t answer immediately. He moved a piece first, adjusting it carefully into the center of the square. Only after he seemed satisfied with the board did he look up.</p>
+
+            <p>“Yes.” His voice was softer than she expected. Calm. Almost careful.</p>
+
+            <p>“And who’s winning?” she asked, tilting her head as if she understood what she was looking at.</p>
+
+            <p>A faint smile touched his mouth. “Depends which side you think I am.”</p>
+
+            <p>She folded her arms, pretending to study the board. The pieces looked identical to her—small carved shapes with no obvious meaning. But she understood tone. And his didn’t feel arrogant or dismissive. Just composed.</p>
+
+            <p>“That’s not fair,” she said. “You can’t be both.”</p>
+
+            <p>“You’d be surprised.”</p>
+
+            <p>She glanced at her watch. She really did need to get going. Her tutorial wasn’t far away, but she liked arriving early. It gave her time to settle in, to prepare. Still, her feet didn’t move. There was something about him that felt... steady. Like he existed at a different pace from everyone else around them.</p>
+
+            <p>Before she could overthink it, she pulled out the chair across from him and sat down.</p>
+
+            <p>“Teach me,” she said.</p>
+
+            <p>He blinked once. Not startled. Just slightly curious. “Do you actually want to learn?” he asked.</p>
+
+            <p>“Maybe.”</p>
+
+            <p>A corner of his mouth lifted. “That’s not how this works.”</p>
+
+            <p>“Then how does it work?”</p>
+
+            <p>He reached forward and rotated the board so the white pieces faced her. “It starts with choosing a side.”</p>
+
+            <p>She looked down at the pieces. The white ones seemed brighter, more inviting somehow. Or maybe that was just because they were closer to her now. She reached forward and touched the nearest pawn.</p>
+
+            <p>“Fine,” she said. “I’ll be white.”</p>
+
+            <p>For a brief second, his fingers brushed the same piece as he adjusted it into place. It wasn’t dramatic. Not electric. Just... noticeable. He withdrew his hand first.</p>
+
+            <p>“White moves first,” he said.</p>
+
+            <p>She stared at the board. “I have no idea what I’m doing.”</p>
+
+            <p>“That’s alright,” he replied. “Most people don’t at the beginning.”</p>
+
+            <p>She looked up at him. “So what does this one do?” she asked, pointing at the pawn she had touched earlier.</p>
+
+            <p>“It moves forward. One square at a time. Except on the first move—it can go two.”</p>
+
+            <p>“That seems unfair.”</p>
+
+            <p>“Only at the start.”</p>
+
+            <p>She considered that. “Can it move backward?”</p>
+
+            <p>“No.”</p>
+
+            <p>She frowned. “So once it moves, it’s committed?”</p>
+
+            <p>He nodded. “Pretty much.”</p>
+
+            <p>“That sounds stressful.”</p>
+
+            <p>He let out a quiet laugh. Not loud, not forced. Just a small, genuine sound. “You get used to it.”</p>
+
+            <p>She pushed the pawn forward two squares. “There,” she said. “Bold first move.”</p>
+
+            <p>He studied the board for a moment, then moved one of his own pieces. “Not bold,” he said. “Standard.”</p>
+
+            <p>She sighed dramatically. “You’re ruining the illusion.”</p>
+
+            <p>“Sorry.”</p>
+
+            <p>They played in silence for a minute. Or rather, he played, and she followed whatever instructions he gave.</p>
+
+            <p>“This one moves diagonally.”</p>
+
+            <p>“That one jumps like an L-shape.”</p>
+
+            <p>“Don’t put your queen there. You’ll lose her.”</p>
+
+            <p>She moved the queen anyway. Two moves later, he took it.</p>
+
+            <p>Her eyes widened. “You didn’t even warn me.”</p>
+
+            <p>“I did,” he said calmly. “That was before. You should have reminded me.”</p>
+
+            <p>He shook his head, amused. “That’s not how the game works.”</p>
+
+            <p>She leaned back in her chair, pretending to be offended. “I don’t like losing.”</p>
+
+            <p>“Then don’t play to win,” he said. “Play to understand.”</p>
+
+            <p>She paused. That didn’t sound like a chess lesson. It sounded like something else. She studied his face, trying to figure out if he meant it as a joke. But he looked completely serious.</p>
+
+            <p>“Are you always this philosophical?” she asked.</p>
+
+            <p>“Only when people sacrifice their queens in the first five moves.”</p>
+
+            <p>She laughed. For a while, the world outside the chessboard faded into background noise. The courtyard was still loud, but it felt distant somehow. Like it belonged to another place. Here, at this small table, time felt slower.</p>
+
+            <p>Eventually, Elena’s phone buzzed in her pocket. She pulled it out and checked the time. Her eyes widened. “I’m late.”</p>
+
+            <p>She stood up quickly, nearly knocking her chair over in the process. “I really have to go. My tutorial started five minutes ago.”</p>
+
+            <p>He nodded. “Good luck.”</p>
+
+            <p>She gathered her file, then hesitated. It felt strange to just leave. Like the conversation had ended too abruptly. “Do you sit here often?” she asked.</p>
+
+            <p>“Sometimes.”</p>
+
+            <p>“Playing both sides?”</p>
+
+            <p>“Usually.”</p>
+
+            <p>She nodded, unsure why that answer felt comforting. “Maybe I’ll come back,” she said.</p>
+
+            <p>He looked at her, expression calm but attentive. “I’ll be here,” he replied.</p>
+
+            <p>She gave a small smile, then turned and walked across the courtyard, weaving through groups of students and scattered benches. Halfway to the tutorial block, she slowed down. She wasn’t thinking about the lecture anymore. Or the tutorial. Or the notes waiting for her. She was thinking about a chessboard. And a quiet boy who played against himself.</p>
+
+            <p>She told herself it was nothing. Just a conversation. Just a game. But something about it felt... important. Like the beginning of a sentence she didn’t yet know how to finish.</p>
+        </div>
+
+        <div class="hook-canopy">
+            <h3>Entranced by the story?</h3>
+            <p>The forest gets deeper. Subscribe to the Wild Canopy to unlock the full novel of Almost, Then Always, delivered straight to your inbox.</p>
+            <a href="index.html#subscribe" class="subscribe-btn">SUBSCRIBE TO UNLOCK</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
