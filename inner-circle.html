@@ -3,45 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Inner Circle | Wild Canopy</title>
+    <title>The Inner Circle | Esther Grace Kimotho</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --emerald-bg: #03120a; --gold: #d4af37; --text-light: #e0e0e0; }
-        body { background-color: var(--emerald-bg); color: var(--text-light); font-family: 'Lora', serif; line-height: 1.8; text-align: center; padding: 50px 20px; }
+        :root { --emerald-bg: #03120a; --gold: #d4af37; --text-light: #e0e0e0; --paper: #0a1c12; }
+        body { background-color: var(--emerald-bg); color: var(--text-light); font-family: 'Lora', serif; line-height: 1.8; margin: 0; padding: 0; }
         
-        .hub-container { max-width: 800px; margin: 0 auto; padding: 60px; background: rgba(10, 28, 18, 0.8); border: 1px solid var(--gold); box-shadow: 0 0 40px rgba(0,0,0,0.8); }
+        .hub-container { max-width: 900px; margin: 50px auto; padding: 40px; background: rgba(10, 28, 18, 0.8); border: 1px solid var(--gold); box-shadow: 0 0 50px rgba(0,0,0,0.9); }
         
-        h1 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 3rem; margin-bottom: 10px; }
-        .welcome-text { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #ccc; font-style: italic; margin-bottom: 50px; }
+        h1 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.5rem; text-align: center; margin-bottom: 30px; letter-spacing: 2px; }
         
-        .book-section { margin-top: 50px; text-align: left; border-top: 1px solid rgba(212, 175, 55, 0.3); padding-top: 40px; }
-        .book-title { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2rem; margin-bottom: 20px; }
+        .author-note { background: rgba(212, 175, 55, 0.05); padding: 30px; border-radius: 5px; margin-bottom: 50px; border-left: 3px solid var(--gold); }
+        .author-note h3 { font-family: 'Cinzel', serif; color: var(--gold); margin-top: 0; }
+        .author-note p { font-style: italic; color: #ccc; font-size: 1.05rem; }
+
+        .section-title { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.5rem; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 10px; margin-bottom: 25px; }
+
+        .chapter-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 50px; }
+        .chapter-card { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); text-decoration: none; color: var(--text-light); transition: 0.3s; }
+        .chapter-card:hover { border-color: var(--gold); transform: translateX(10px); background: rgba(212, 175, 55, 0.05); }
+        .chapter-card.locked { opacity: 0.6; cursor: default; }
+        .chapter-card.locked:hover { transform: none; border-color: rgba(255,255,255,0.1); }
         
-        .chapter-list { list-style: none; padding: 0; }
-        .chapter-list li { margin-bottom: 15px; }
-        .chapter-list a { color: var(--text-light); text-decoration: none; font-size: 1.2rem; transition: 0.3s; display: block; padding: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3); }
-        .chapter-list a:hover { border-color: var(--gold); color: var(--gold); transform: translateX(10px); }
-        
-        .return-btn { display: inline-block; margin-top: 50px; padding: 10px 20px; color: var(--gold); text-decoration: none; font-family: 'Cinzel', serif; border: 1px solid var(--gold); transition: 0.3s; }
-        .return-btn:hover { background: var(--gold); color: #000; }
+        .chapter-info h4 { font-family: 'Cinzel', serif; margin: 0; font-size: 1.2rem; color: var(--gold); }
+        .chapter-status { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 1px; color: #888; }
+        .status-ready { color: var(--gold); font-weight: bold; }
+
+        .coming-soon-box { background: #000; padding: 20px; border: 1px dashed #444; text-align: center; margin-bottom: 40px; }
+        .coming-soon-box p { font-family: 'Cinzel', serif; color: #666; font-size: 0.9rem; margin: 0; }
+
+        .footer-links { text-align: center; margin-top: 40px; }
+        .return-btn { color: var(--gold); text-decoration: none; font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; }
+        .return-btn:hover { color: #fff; }
     </style>
 </head>
 <body>
 
     <div class="hub-container">
-        <h1>Welcome to the Inner Circle</h1>
-        <p class="welcome-text">The canopy has opened. Thank you for subscribing. Here is your exclusive access to the rest of the story.</p>
+        <h1>The Inner Circle</h1>
 
-        <div class="book-section">
-            <h2 class="book-title">Almost, Then Always</h2>
-            <ul class="chapter-list">
-                <li><a href="almost-chapter-1.html">Chapter 1: The First Move</a></li>
-                <li><a href="almost-chapter-2.html">Chapter 2: The Space Between Words</a></li>
-                <li><a href="almost-chapter-3.html">Chapter 3: Our Own Language</a></li>
-                </ul>
+        <div class="author-note">
+            <h3>A Message from the Canopy</h3>
+            <p>Thank you for subscribing. Writing <em>Almost, Then Always</em> has been a deeply personal journey, balancing life as a law student with the quiet worlds I build in my head. By being here, you aren't just a reader—you're a patron of the arts. I'll be sharing new chapters and secret lore with you first.</p>
+            <p>— Esther Grace Kimotho</p>
         </div>
 
-        <a href="index.html" class="return-btn">Return to Main Site</a>
+        <h2 class="section-title">Current Manuscript: Almost, Then Always</h2>
+        <div class="chapter-grid">
+            <a href="almost-chapter-1.html" class="chapter-card">
+                <div class="chapter-info">
+                    <h4>Chapter 1: The First Move</h4>
+                    <span class="chapter-status">Released</span>
+                </div>
+                <span class="status-ready">READ →</span>
+            </a>
+
+            <a href="almost-chapter-2.html" class="chapter-card">
+                <div class="chapter-info">
+                    <h4>Chapter 2: The Space Between Words</h4>
+                    <span class="chapter-status">Released</span>
+                </div>
+                <span class="status-ready">READ →</span>
+            </a>
+
+            <a href="almost-chapter-3.html" class="chapter-card">
+                <div class="chapter-info">
+                    <h4>Chapter 3: Our Own Language</h4>
+                    <span class="chapter-status">Released</span>
+                </div>
+                <span class="status-ready">READ →</span>
+            </a>
+
+            <div class="chapter-card locked">
+                <div class="chapter-info">
+                    <h4>Chapter 4: Evenings That Last Long</h4>
+                    <span class="chapter-status">Coming soon</span>
+                </div>
+                <span>LOCKED</span>
+            </div>
+        </div>
+
+        <h2 class="section-title">Future Sanctuary Projects</h2>
+        <div class="coming-soon-box">
+            <p>FALLEN | WOLFIRE | THE LOOP | ALL BECAUSE OF HIM</p>
+            <p style="font-size: 0.7rem; margin-top: 10px; color: #444;">SUBSCRIBERS GET EARLY ACCESS TO ALL FUTURE RELEASES</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html" class="return-btn">← LEAVE THE INNER CIRCLE</a>
+        </div>
     </div>
 
 </body>
