@@ -357,7 +357,6 @@
 
     // MODALS & VIP BYPASS LOGIC
     function openModal() { 
-        // If they are already subscribed, let them pass directly to the inner circle!
         if (localStorage.getItem('subscribedToCanopy') === 'true') {
             window.location.href = 'inner-circle.html';
         } else {
@@ -384,7 +383,7 @@
         reveals.forEach(reveal => revealOnScroll.observe(reveal));
     });
 
-    // VIP CHECKER: RUNS EVERY TIME THE PAGE IS SHOWN (KILLS THE "GHOST" PAGE)
+    // VIP CHECKER
     window.addEventListener('pageshow', function() {
         if (localStorage.getItem('subscribedToCanopy') === 'true') {
             var formContainer = document.getElementById('subscribe-form-container');
@@ -397,7 +396,7 @@
         }
     });
 
-    // INTEGRATED FORM LOGIC & SAVING THE SUBSCRIPTION TO BROWSER MEMORY
+    // FORM LOGIC
     var form = document.getElementById("my-form");
     var statusMsg = document.getElementById("my-form-status");
     async function handleSubmit(event) {
@@ -412,7 +411,6 @@
         headers: { 'Accept': 'application/json' }
       }).then(response => {
         if (response.ok) {
-          // SAVE THE SUBSCRIPTION IN THE BROWSER!
           localStorage.setItem('subscribedToCanopy', 'true');
           window.location.href = "inner-circle.html"; 
         } else {
