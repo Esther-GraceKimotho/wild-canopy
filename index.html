@@ -67,6 +67,9 @@
         .novel-title { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
         .novel-cover { width: 300px; height: 450px; object-fit: cover; border: 1px solid rgba(212, 175, 55, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.8); transition: transform 0.4s ease; flex-shrink: 0; }
         .novel-cover:hover { transform: scale(1.05); }
+        
+        /* Novel text formatting */
+        .novel-details p { margin-bottom: 15px; color: #ccc; font-size: 1.1rem; }
 
         /* BUTTONS */
         .sneak-peek-btn { margin-top: 25px; padding: 12px 25px; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; cursor: pointer; transition: 0.3s; display: inline-block; text-decoration: none; }
@@ -82,6 +85,8 @@
         /* CONTACT */
         .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
         .contact-item i { font-size: 2.2rem; color: var(--gold); margin-bottom: 15px; }
+        .contact-item a { color: #ccc; text-decoration: none; transition: 0.3s; }
+        .contact-item a:hover { color: var(--gold); }
 
         footer { text-align: center; padding: 40px 20px; background: #020a05; color: #666; font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid #111; margin-top: 40px; }
 
@@ -115,7 +120,8 @@
         <div class="about-text reveal delay-1">
             <p>Wild Canopy is a space where words grow wild, and stories breathe &mdash; a place where emotion meets reflection, and imagination finds its home. Here, I explore the human experience in all its depth: love, longing, vulnerability, and the quiet strength that carries us forward.</p>
             <p>I am a writer and a law student, navigating the intersection of reason and feeling. My legal studies sharpen my understanding of justice, morality, and human complexity, while my writing gives voice to the hearts and stories that law alone cannot capture.</p>
-            <p>From <em>Almost, Then Always</em> to <em>Fallen</em>, <em>All Because of Him</em>, <em>The Loop</em>, and <em>Wolfire</em>, each story is a journey &mdash; a reflection on choices, consequences, and the enduring power of resilience.</p>
+            <p>From <em>Almost, Then Always</em> to <em>Fallen</em>, <em>All Because of Him</em>, <em>The Loop</em>, and <em>Wolfire</em>, each story is a journey &mdash; a reflection on choices, consequences, and the enduring power of resilience. Through prose that is both deliberate and lyrical, I aim to illuminate the spaces where hearts struggle, grow, and heal.</p>
+            <p>Wild Canopy is for readers who seek depth, beauty, and truth in storytelling &mdash; a canopy under which every emotion is honored, every story cherished.</p>
             <p>Welcome. Explore. Let the stories linger.</p>
         </div>
     </div>
@@ -124,27 +130,73 @@
 <section id="novels">
     <h2 class="section-title reveal" style="text-align: center;">The Collections</h2>
     <div class="novel-showcase">
+        
         <div class="novel-row reveal">
             <img src="almost, then always.jpeg" class="novel-cover" alt="Almost, Then Always">
             <div class="novel-details">
                 <h3 class="novel-title">Almost, Then Always</h3>
                 <p>Elena never meant to fall in love over a chessboard.</p>
                 <p>It was supposed to be a simple friendship—quiet conversations, shared laughter, and games that ended in gentle checkmates. But somewhere between late replies, unspoken fears, and the slow distance that crept between them, love became something heavier than either of them expected.</p>
+                <p>As Elena struggles to hold on and Adrian struggles to understand what he feels, their relationship drifts between closeness and silence, hope and almosts. What begins as a chance meeting becomes a story of timing, vulnerability, and the terrifying honesty that love demands.</p>
+                <p><em>Almost, Then Always</em> is a reflective, deeply emotional journey about loving first, losing slowly, and discovering that sometimes the hardest part isn't letting go—it's learning how to stay.</p>
                 <a href="almost-manuscript.html" class="sneak-peek-btn">DISCOVER NOVEL</a>
             </div>
         </div>
+
+        <div class="novel-row reveal">
+            <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&q=80" class="novel-cover" alt="Fallen Cover by Esther Grace Kimotho">
+            <div class="novel-details">
+                <h3 class="novel-title">Fallen</h3>
+                <p>What we desire most is not always what we truly need, but coming to terms with this truth is a battle even the strongest hearts must face.</p>
+                <p>Zara Frost stands at the crossroads of this struggle, her soul torn between longing and reality. Against all odds, she wrestles with the weight of her choices, fighting to reconcile her dreams with the path unfolding before her.</p>
+                <a href="fallen.html" class="sneak-peek-btn">DISCOVER NOVEL</a>
+            </div>
+        </div>
+
+        <div class="novel-row reveal">
+            <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80" class="novel-cover" alt="All Because of Him Cover">
+            <div class="novel-details">
+                <h3 class="novel-title">All Because of Him</h3>
+                <p>One person. One choice. A ripple that changes everything. Explore the aftermath of a single encounter that rewrote the stars.</p>
+                <a href="all-because-of-him.html" class="sneak-peek-btn">COMING SOON</a>
+            </div>
+        </div>
+
+        <div class="novel-row reveal">
+            <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?auto=format&fit=crop&q=80" class="novel-cover" alt="The Loop Cover">
+            <div class="novel-details">
+                <h3 class="novel-title">The Loop</h3>
+                <p>When time repeats itself, love becomes both memory and prison. Can you break the cycle without breaking the heart?</p>
+                <a href="the-loop.html" class="sneak-peek-btn">COMING SOON</a>
+            </div>
+        </div>
+
+        <div class="novel-row reveal">
+            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80" class="novel-cover" alt="Wolfire Cover">
+            <div class="novel-details">
+                <h3 class="novel-title">Wolfire</h3>
+                <p>Wild instincts. Burning loyalty. A love that howls in the dark and fights for its place in the world.</p>
+                <a href="wolfire.html" class="sneak-peek-btn">COMING SOON</a>
+            </div>
+        </div>
+
     </div>
 </section>
 
 <section id="subscribe">
     <div class="subscribe-wrapper reveal">
         <h2 class="section-title" style="margin-bottom: 10px; text-align: center;">Join The Canopy</h2>
+        
         <div id="subscribe-form-container">
             <p id="sub-description" style="color: #888; margin-bottom: 20px;">Unlock the full Inner Circle dashboard and manuscripts.</p>
             <form id="my-form" action="https://formspree.io/f/xdalygyw" method="POST" class="sub-input-group">
                 <input type="email" name="email" placeholder="Enter your email address" required>
                 <button type="submit">SUBSCRIBE</button>
             </form>
+            
+            <div style="margin-top: 20px;">
+                <a href="#" onclick="forceUnlock(event)" style="color: #666; font-family: 'Playfair Display', serif; font-size: 0.9rem; text-decoration: underline; transition: 0.3s;">Already a subscriber? Click here to unlock this device.</a>
+            </div>
         </div>
 
         <div id="already-subscribed-container" style="display: none;">
@@ -166,12 +218,14 @@
 <footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
 
 <script>
+    // PROGRESS BAR
     window.onscroll = function() {
         let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         document.getElementById("myBar").style.width = (winScroll / height) * 100 + "%";
     };
 
+    // SCROLL REVEALS
     document.addEventListener("DOMContentLoaded", function() {
         const reveals = document.querySelectorAll(".reveal");
         const observer = new IntersectionObserver(entries => {
@@ -180,28 +234,42 @@
         reveals.forEach(reveal => observer.observe(reveal));
     });
 
+    // CHECK IF ALREADY VIP ON PAGE LOAD
     function checkVip() {
         if (localStorage.getItem('subscribedToCanopy') === 'true') {
             document.getElementById('subscribe-form-container').style.display = 'none';
             document.getElementById('already-subscribed-container').style.display = 'block';
         }
     }
-
     window.addEventListener('pageshow', checkVip);
 
+    // MANUAL UNLOCK FUNCTION (For the new text link)
+    function forceUnlock(e) {
+        e.preventDefault();
+        localStorage.setItem('subscribedToCanopy', 'true');
+        window.location.href = "inner-circle.html";
+    }
+
+    // FORM SUBMISSION (Bulletproof Version)
     var form = document.getElementById("my-form");
     if(form) {
-        form.addEventListener("submit", async function(e) {
+        form.addEventListener("submit", function(e) {
             e.preventDefault();
             var btn = form.querySelector('button');
             btn.innerHTML = "Opening the canopy...";
+
+            // DROP THE KEY IMMEDIATELY (Do not wait for Formspree)
+            localStorage.setItem('subscribedToCanopy', 'true');
+
+            // SEND DATA TO FORMSPREE IN THE BACKGROUND AND REDIRECT
             fetch(e.target.action, {
-                method: "POST", body: new FormData(e.target), headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    localStorage.setItem('subscribedToCanopy', 'true');
-                    window.location.href = "inner-circle.html"; 
-                }
+                method: "POST", 
+                body: new FormData(e.target), 
+                headers: { 'Accept': 'application/json' }
+            }).then(() => {
+                window.location.href = "inner-circle.html"; 
+            }).catch(() => {
+                window.location.href = "inner-circle.html"; 
             });
         });
     }
