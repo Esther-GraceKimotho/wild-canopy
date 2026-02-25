@@ -85,15 +85,8 @@
             color: #d1d1d1;
         }
 
-        /* Special styling for the internal monologue blocks */
-        .reflection {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: #a0a0a0;
-            margin-bottom: 40px !important;
-            text-indent: 0 !important;
-            border-left: 2px solid var(--gold);
-            padding-left: 20px;
+        .story-text p:first-of-type {
+            text-indent: 0; 
         }
 
         .story-text p:first-of-type::first-letter {
@@ -106,34 +99,26 @@
             margin-top: 8px;
         }
 
-        /* Navigation Buttons at the bottom */
-        .chapter-nav { 
-            display: flex; 
-            justify-content: space-between; 
-            margin-top: 60px; 
-            padding-top: 40px; 
-            border-top: 1px solid rgba(212, 175, 55, 0.2); 
+        /* Smart Navigation Buttons */
+        .sneak-peek-btn {
+            padding: 12px 25px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold) !important;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
         }
 
-        .nav-btn { 
-            padding: 12px 25px; 
-            background: transparent; 
-            border: 1px solid var(--gold); 
-            color: var(--gold); 
-            text-decoration: none; 
-            font-family: 'Cinzel', serif; 
-            font-size: 0.9rem; 
-            letter-spacing: 1px; 
-            transition: 0.3s; 
-        }
-
-        .nav-btn:hover { 
+        .sneak-peek-btn:hover { 
             background: var(--gold); 
-            color: #000; 
+            color: #000 !important; 
         }
-
-        /* Hide the 'Previous' button if there isn't one, to keep 'Next' aligned right */
-        .nav-placeholder { visibility: hidden; }
 
         @media (max-width: 768px) {
             .reading-container { margin: 20px; padding: 40px 20px; }
@@ -143,200 +128,198 @@
 <body>
 
     <div class="reader-nav">
-        <a href="inner-circle.html" class="back-btn">← Return to the Inner Circle</a>
+        <a href="index.html" class="back-btn">← Return to the Canopy</a>
     </div>
 
     <div class="reading-container">
         <h1 class="chapter-title">Chapter 2</h1>
-        <p class="book-title">The Space Between Words</p>
+        <p class="book-title">The Silence Between</p>
 
         <div class="story-text">
+            <p>I told myself I was just curious. Curious people go back to places. They revisit things. They test whether something felt significant or whether it only seemed that way in the moment. I went back the next day to prove to myself that it had meant nothing. That’s how I justified it. Not because I wanted to see him. Just because I wanted to see if he would be there. There’s a difference. Or at least, that’s what I believed then.</p>
             
-            <p class="reflection">I told myself I was just curious. Curious people go back to places. They revisit things. They test whether something felt significant or whether it only seemed that way in the moment. I went back the next day to prove to myself that it had meant nothing. That’s how I justified it. Not because I wanted to see him. Just because I wanted to see if he would be there. There’s a difference. Or at least, that’s what I believed then.</p>
-
             <p>Elena told herself she was only passing through. The next afternoon, her lecture ended earlier than expected. Students poured out of the hall in scattered groups, already discussing assignments and weekend plans. She adjusted the strap of her bag and stepped into the sunlight, blinking as the brightness hit her eyes.</p>
-
+            
             <p>She did not intend to walk toward the chess tables. But her feet turned in that direction anyway.</p>
-
+            
             <p>The courtyard looked the same as it had the day before—loud, restless, alive. The jacaranda tree cast long shadows across the wooden benches, its purple blossoms scattered like confetti over the pavement. And there he was. Same table. Same posture. Same quiet focus.</p>
-
+            
             <p>This time, though, he wasn’t playing both sides. The board was set up, but untouched. He looked up before she spoke, as if he had sensed her approaching.</p>
-
+            
             <p>“You came back,” he said. It wasn’t a question.</p>
-
+            
             <p>Elena felt an unreasonable flicker of satisfaction. “I said I might,” she replied, trying to sound casual.</p>
-
+            
             <p>He nodded once, as if that explained everything. She took the seat across from him without asking this time.</p>
-
+            
             <p>“Are we starting over?” she asked, glancing at the neatly arranged pieces.</p>
-
+            
             <p>“That depends,” he said. “Did you study?”</p>
-
+            
             <p>She raised an eyebrow. “Study?”</p>
-
+            
             <p>“You can’t improve if you don’t think about your mistakes.”</p>
-
+            
             <p>She leaned back in her chair. “You sound like my lecturer.”</p>
-
+            
             <p>“I’ll take that as a compliment.”</p>
-
+            
             <p>“It wasn’t.”</p>
-
+            
             <p>A faint smile appeared again—brief, controlled, but real. He rotated the board toward her. “You’re white again,” he said.</p>
-
+            
             <p>“Do I have a choice?”</p>
-
+            
             <p>“You always have a choice.”</p>
-
+            
             <p>She hesitated, then shook her head. “I’ll stick with white.”</p>
-
+            
             <p>She moved a pawn forward—only one square this time. He noticed.</p>
-
+            
             <p>“Cautious,” he observed.</p>
-
+            
             <p>“I’m learning.”</p>
-
+            
             <p>He made his move without comment. For the first few minutes, they played in near silence. The quiet between them wasn’t uncomfortable, just... deliberate. It felt like they were both measuring something, though Elena couldn’t quite define what.</p>
-
+            
             <p>“So,” she said finally, “do you play competitively?”</p>
-
+            
             <p>“Not anymore.”</p>
-
+            
             <p>“You used to?”</p>
-
+            
             <p>“In high school.”</p>
-
+            
             <p>“Why’d you stop?”</p>
-
+            
             <p>He adjusted a knight. “It stopped being fun.”</p>
-
+            
             <p>She tilted her head. “Because you lost?”</p>
-
+            
             <p>“Because I won.”</p>
-
+            
             <p>That caught her attention. “That doesn’t make sense.”</p>
-
+            
             <p>“It does if you like the thinking more than the result.”</p>
-
+            
             <p>She watched him carefully. “You’re strange,” she decided.</p>
-
+            
             <p>“I’ve been told.” There was no defensiveness in his tone. Just acceptance.</p>
-
+            
             <p>Elena studied the board, then looked back at him. “What are you studying?” she asked.</p>
-
+            
             <p>“Engineering.”</p>
-
+            
             <p>“That explains it.”</p>
-
+            
             <p>“Explains what?”</p>
-
+            
             <p>“The patience. The structure. The unnecessary seriousness.”</p>
-
+            
             <p>He almost laughed. Almost. “And you?”</p>
-
+            
             <p>“Law.”</p>
-
+            
             <p>He nodded slowly. “That explains you.”</p>
-
+            
             <p>“Oh? And what does it explain?”</p>
-
+            
             <p>“You argue confidently about things you don’t fully understand.”</p>
-
+            
             <p>Her eyes widened. “That was one time.”</p>
-
+            
             <p>He didn’t answer. He just moved his bishop, quietly threatening her rook. She stared at the board and realized, too late, what he’d done.</p>
-
+            
             <p>“You planned that,” she accused.</p>
-
+            
             <p>“Several moves ago.”</p>
-
+            
             <p>She groaned. “You’re insufferable.”</p>
-
+            
             <p>“You’re impulsive.”</p>
-
+            
             <p>She opened her mouth to argue, then stopped. He wasn’t wrong. The thought unsettled her slightly—not because he had criticized her, but because he had noticed her. Not many people did. Most conversations she had on campus were surface-level. Friendly. Quick. Replaceable. This felt different. He paid attention.</p>
-
+            
             <p>She made another move, trying to recover from her earlier mistake.</p>
-
+            
             <p>“So,” she said carefully, “do you always sit here alone?”</p>
-
+            
             <p>“Mostly.”</p>
-
+            
             <p>“Don’t you get bored?”</p>
-
+            
             <p>He shrugged lightly. “Not really.”</p>
-
+            
             <p>“That’s... concerning.”</p>
-
+            
             <p>“Why?”</p>
-
+            
             <p>“Because people are supposed to need other people.”</p>
-
+            
             <p>He considered that. “Do they?”</p>
-
+            
             <p>She held his gaze. “Yes.”</p>
-
+            
             <p>For a second, something flickered in his expression—something thoughtful, almost guarded. “Maybe,” he said finally. “But needing someone and enjoying someone are different things.”</p>
-
+            
             <p>She didn’t know why that sentence lingered. She looked down at the board to avoid thinking about it too much. Her phone buzzed in her pocket. She ignored it. He noticed.</p>
-
+            
             <p>“You’re not checking that?” he asked.</p>
-
+            
             <p>“It can wait.”</p>
-
+            
             <p>He studied her for a moment, then looked back at the board. She felt oddly pleased by his silence.</p>
-
+            
             <p>They played longer this time. Nearly forty minutes passed before Elena realized she had lost again. But this time, it wasn’t immediate. She had lasted.</p>
-
+            
             <p>“You improved,” he said.</p>
-
+            
             <p>“Don’t sound so surprised.”</p>
-
+            
             <p>“I’m not.”</p>
-
+            
             <p>She looked at the board, then back at him. “What’s your name?” she asked suddenly.</p>
-
+            
             <p>He blinked once, as if the question had caught him off guard. “Adrian.”</p>
-
+            
             <p>It suited him. Calm. Balanced.</p>
-
+            
             <p>“Elena,” she replied.</p>
-
+            
             <p>“I know.”</p>
-
+            
             <p>Her heart skipped slightly. “You do?”</p>
-
+            
             <p>“You said it yesterday. When you were late.”</p>
-
+            
             <p>She didn’t remember that. “Were you paying attention?”</p>
-
+            
             <p>He held her gaze steadily. “Yes.”</p>
-
+            
             <p>The air shifted slightly between them. Not dramatically. Not in a way that would make anyone passing by look twice. But Elena felt it. That subtle awareness of being seen. A group of students passed behind her, laughing loudly. The noise broke the moment. She glanced at the time.</p>
-
+            
             <p>“I’m not late today,” she said.</p>
-
+            
             <p>“Good.”</p>
-
+            
             <p>She hesitated. “You’ll be here tomorrow?”</p>
-
+            
             <p>“Probably.”</p>
-
+            
             <p>“Playing both sides again?”</p>
-
+            
             <p>“Maybe.”</p>
-
+            
             <p>She stood, brushing invisible dust from her skirt. “Then I’ll come back,” she said.</p>
-
+            
             <p>He nodded, like he had expected that answer. As she walked away, she felt lighter than she had the day before. Not because she had won. She hadn’t. But because something had shifted. The space between them felt smaller now. Not empty. Just waiting.</p>
-
-            <p class="reflection" style="margin-top: 50px;">I don’t remember the exact move that changed things. It wasn’t a confession. It wasn’t a touch. It was the moment I realized he was paying attention. To my name. To my mistakes. To the way I argued. It’s strange how little it takes to make someone feel chosen. He didn’t say anything extraordinary. But he stayed. He listened. He noticed. And for someone who had always felt slightly overlooked, that was enough to keep coming back.</p>
-
+            
+            <p style="font-style: italic;">I don’t remember the exact move that changed things. It wasn’t a confession. It wasn’t a touch. It was the moment I realized he was paying attention. To my name. To my mistakes. To the way I argued. It’s strange how little it takes to make someone feel chosen. He didn’t say anything extraordinary. But he stayed. He listened. He noticed. And for someone who had always felt slightly overlooked, that was enough to keep coming back.</p>
         </div>
 
-        <div id="vip-nav" style="display: none; text-align: center; margin-top: 80px; padding-top: 50px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
-            <a href="almost-chapter-1.html" class="sneak-peek-btn" style="text-decoration: none; display: inline-block; padding: 15px 25px; border-width: 2px; margin: 10px;">← CHAPTER 1</a>
-            <a href="almost-chapter-3.html" class="sneak-peek-btn" style="text-decoration: none; display: inline-block; padding: 15px 25px; border-width: 2px; margin: 10px;">CHAPTER 3 →</a>
+        <div style="text-align: center; margin-top: 80px; padding-top: 50px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+            <a href="almost-chapter-1.html" class="sneak-peek-btn">← PREVIOUS</a>
+            <a href="almost-chapter-3.html" class="sneak-peek-btn">NEXT CHAPTER →</a>
         </div>
 
     </div>

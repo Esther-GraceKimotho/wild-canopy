@@ -99,45 +99,7 @@
             margin-top: 8px;
         }
 
-        /* Subscription Block */
-        .hook-canopy {
-            margin-top: 80px;
-            padding-top: 50px;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            text-align: center;
-        }
-
-        .hook-canopy h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .hook-canopy p {
-            color: #888;
-            margin-bottom: 40px;
-            font-style: italic;
-            font-family: 'Playfair Display', serif;
-            text-indent: 0;
-        }
-
-        .subscribe-btn {
-            padding: 15px 35px;
-            background: var(--gold);
-            color: #000;
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            border-radius: 3px;
-        }
-
-        .subscribe-btn:hover {
-            background: #fff;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-        }
+        .sneak-peek-btn:hover { background: var(--gold); color: #000 !important; }
 
         @media (max-width: 768px) {
             .reading-container { margin: 20px; padding: 40px 20px; }
@@ -300,36 +262,12 @@
             <p>She told herself it was nothing. Just a conversation. Just a game. But something about it felt... important. Like the beginning of a sentence she didn’t yet know how to finish.</p>
         </div>
 
-        <div class="hook-canopy">
-            <h3>Entranced by the story?</h3>
-            <p>The forest gets deeper. Subscribe to the Wild Canopy to unlock the full novel of Almost, Then Always, delivered straight to your inbox.</p>
-            <a href="index.html#subscribe" class="subscribe-btn">SUBSCRIBE TO UNLOCK</a>
+        <div style="text-align: center; margin-top: 80px; padding-top: 50px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+            <a href="almost-manuscript.html" class="sneak-peek-btn" style="text-decoration: none; display: inline-block; padding: 12px 25px; border: 1px solid #d4af37; color: #d4af37; font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; margin: 10px;">← MANUSCRIPT</a>
+            <a href="almost-chapter-2.html" class="sneak-peek-btn" style="text-decoration: none; display: inline-block; padding: 12px 25px; border: 1px solid #d4af37; color: #d4af37; font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; margin: 10px;">NEXT CHAPTER →</a>
         </div>
 
     </div>
-<div class="chapter-nav" style="justify-content: center; text-align: center; margin-top: 50px;">
-    
-    <div id="guest-nav">
-        <p style="font-family: 'Playfair Display', serif; font-style: italic; color: #888; margin-bottom: 20px;">
-            The story continues inside the Inner Circle.
-        </p>
-        <a href="index.html#subscribe" class="sneak-peek-btn" style="text-decoration: none; display: inline-block;">SUBSCRIBE TO READ MORE</a>
-    </div>
 
-    <div id="vip-nav" style="display: none; text-align: center; margin-top: 80px; padding-top: 50px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
-            <a href="almost-manuscript.html" class="sneak-peek-btn" style="text-decoration: none; display: inline-block; padding: 15px 25px; border-width: 2px; margin: 10px;">← MANUSCRIPT</a>
-            <a href="almost-chapter-2.html" class="sneak-peek-btn" style="text-decoration: none; display: inline-block; padding: 15px 25px; border-width: 2px; margin: 10px;">CHAPTER 2 →</a>
-        </div>
-
-</div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        if (localStorage.getItem('subscribedToCanopy') === 'true') {
-            document.getElementById('guest-nav').style.display = 'none';
-            document.getElementById('vip-nav').style.display = 'block';
-        }
-    });
-</script>
 </body>
 </html>

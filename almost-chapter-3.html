@@ -17,14 +17,33 @@
         .story-text p { margin-bottom: 25px; text-indent: 30px; color: #d1d1d1; }
         .reflection { font-family: 'Playfair Display', serif; font-style: italic; color: #a0a0a0; margin-bottom: 40px !important; text-indent: 0 !important; border-left: 2px solid var(--gold); padding-left: 20px; }
         .story-text p:first-of-type::first-letter { font-family: 'Cinzel', serif; color: var(--gold); font-size: 4rem; float: left; line-height: 0.8; margin-right: 12px; margin-top: 8px; }
-        .chapter-nav { display: flex; justify-content: space-between; margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(212, 175, 55, 0.2); }
-        .nav-btn { padding: 12px 25px; background: transparent; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; }
-        .nav-btn:hover { background: var(--gold); color: #000; }
+        
+        /* Button Styling and Hover Effects */
+        .sneak-peek-btn { 
+            padding: 12px 25px; 
+            background: transparent; 
+            border: 1px solid var(--gold); 
+            color: var(--gold); 
+            text-decoration: none; 
+            font-family: 'Cinzel', serif; 
+            font-size: 0.9rem; 
+            letter-spacing: 1px; 
+            transition: 0.3s; 
+            display: inline-block;
+            margin: 10px;
+        }
+        .sneak-peek-btn:hover { 
+            background: var(--gold); 
+            color: #000; 
+        }
+        
         @media (max-width: 768px) { .reading-container { margin: 20px; padding: 40px 20px; } }
     </style>
 </head>
 <body>
-    <div class="reader-nav"><a href="inner-circle.html" class="back-btn">← Return to the Inner Circle</a></div>
+    <div class="reader-nav">
+        <a href="index.html" class="back-btn">← Return to the Canopy</a>
+    </div>
     <div class="reading-container">
         <h1 class="chapter-title">Chapter 3</h1>
         <p class="book-title">Our Own Language</p>
@@ -100,10 +119,12 @@
             <p>He nodded. “Same time.”</p>
             <p class="reflection" style="margin-top: 50px;">I didn’t realize we had built a world of our own. Not a big one. Not a dramatic one. Just a table under a tree. A chessboard. A few shared snacks. Long conversations that didn’t feel long. We didn’t call it anything. We didn’t define it. But it was ours. And the strange thing about private worlds is this: You never notice how fragile they are… until the first crack appears.</p>
         </div>
-        <div id="vip-nav" style="display: none; text-align: center; margin-top: 80px; padding-top: 50px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
-            <a href="almost-chapter-2.html" class="sneak-peek-btn" style="text-decoration: none; display: inline-block; padding: 15px 25px; border-width: 2px; margin: 10px;">← CHAPTER 2</a>
-            <a href="almost-chapter-4.html" class="sneak-peek-btn" style="text-decoration: none; display: inline-block; padding: 15px 25px; border-width: 2px; margin: 10px;">CHAPTER 4 →</a>
+
+        <div style="text-align: center; margin-top: 80px; padding-top: 50px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+            <a href="almost-chapter-2.html" class="sneak-peek-btn">← PREVIOUS</a>
+            <a href="almost-chapter-4.html" class="sneak-peek-btn">NEXT CHAPTER →</a>
         </div>
+
     </div>
 </body>
 </html>
