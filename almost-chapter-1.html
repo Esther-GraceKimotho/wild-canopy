@@ -139,6 +139,20 @@
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
+        .sneak-peek-btn {
+            padding: 12px 25px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sneak-peek-btn:hover { background: var(--gold); color: #000; }
+
         @media (max-width: 768px) {
             .reading-container { margin: 20px; padding: 40px 20px; }
         }
@@ -300,13 +314,30 @@
             <p>She told herself it was nothing. Just a conversation. Just a game. But something about it felt... important. Like the beginning of a sentence she didn’t yet know how to finish.</p>
         </div>
 
-        <div class="hook-canopy">
-            <h3>Entranced by the story?</h3>
-            <p>The forest gets deeper. Subscribe to the Wild Canopy to unlock the full novel of Almost, Then Always, delivered straight to your inbox.</p>
-            <a href="index.html#subscribe" class="subscribe-btn">SUBSCRIBE TO UNLOCK</a>
+        <div id="guest-nav">
+            <div class="hook-canopy">
+                <h3>Entranced by the story?</h3>
+                <p>The forest gets deeper. Subscribe to the Wild Canopy to unlock the full novel of Almost, Then Always, delivered straight to your inbox.</p>
+                <a href="index.html#subscribe" class="subscribe-btn">SUBSCRIBE TO UNLOCK</a>
+            </div>
+        </div>
+
+        <div id="vip-nav" style="display: none; text-align: center; margin-top: 80px; padding-top: 50px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+            <p style="font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold); margin-bottom: 20px; font-size: 1.2rem;">
+                Welcome back to the Inner Circle.
+            </p>
+            <a href="almost-chapter-2.html" class="sneak-peek-btn" style="text-decoration: none; display: inline-block; padding: 15px 35px; border-width: 2px;">PROCEED TO CHAPTER 2 →</a>
         </div>
 
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (localStorage.getItem('subscribedToCanopy') === 'true') {
+                document.getElementById('guest-nav').style.display = 'none';
+                document.getElementById('vip-nav').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
