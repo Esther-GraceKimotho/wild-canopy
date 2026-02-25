@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuscript: Almost, Then Always | Inner Circle</title>
+    <meta name="copyright" content="Esther Grace Kimotho">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --emerald-bg: #03120a; --gold: #d4af37; --text-light: #e0e0e0; --paper: #0a1c12; }
+        body { background-color: var(--emerald-bg); color: var(--text-light); font-family: 'Lora', serif; line-height: 1.8; margin: 0; padding: 0; }
+        
+        .hub-container { max-width: 900px; margin: 50px auto; padding: 40px; background: rgba(10, 28, 18, 0.8); border: 1px solid var(--gold); box-shadow: 0 0 50px rgba(0,0,0,0.9); }
+        
+        .manuscript-header { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 30px; }
+        .manuscript-header img { width: 120px; border: 1px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .manuscript-header h1 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.2rem; margin: 0 0 10px 0; text-transform: uppercase; }
+        .manuscript-header p { font-family: 'Playfair Display', serif; color: #888; font-style: italic; margin: 0; font-size: 1.1rem; }
+
+        .chapter-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 50px; }
+        .chapter-card { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); text-decoration: none; color: var(--text-light); transition: 0.3s; }
+        .chapter-card:hover { border-color: var(--gold); transform: translateX(10px); background: rgba(212, 175, 55, 0.05); }
+        .chapter-card.locked { opacity: 0.5; cursor: default; }
+        .chapter-card.locked:hover { transform: none; border-color: rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); }
+        
+        .chapter-info h4 { font-family: 'Cinzel', serif; margin: 0; font-size: 1.2rem; color: var(--gold); }
+        .chapter-status { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 1px; color: #888; }
+        .status-ready { color: var(--gold); font-weight: bold; letter-spacing: 1px; }
+
+        .footer-links { text-align: center; margin-top: 40px; border-top: 1px solid rgba(212, 175, 55, 0.2); padding-top: 30px; }
+        .return-btn { color: var(--gold); text-decoration: none; font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; }
+        .return-btn:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+    <div class="hub-container">
+        
+        <div class="manuscript-header">
+            <img src="almost, then always.jpeg" alt="Cover">
+            <div>
+                <h1>Almost, Then Always</h1>
+                <p>"Elena never meant to fall in love over a chessboard."</p>
+            </div>
+        </div>
+
+        <div class="chapter-grid">
+            <a href="almost-chapter-1.html" class="chapter-card">
+                <div class="chapter-info">
+                    <h4>Chapter 1: The First Move</h4>
+                    <span class="chapter-status">Released</span>
+                </div>
+                <span class="status-ready">READ →</span>
+            </a>
+
+            <a href="almost-chapter-2.html" class="chapter-card">
+                <div class="chapter-info">
+                    <h4>Chapter 2: The Space Between Words</h4>
+                    <span class="chapter-status">Released</span>
+                </div>
+                <span class="status-ready">READ →</span>
+            </a>
+
+            <a href="almost-chapter-3.html" class="chapter-card">
+                <div class="chapter-info">
+                    <h4>Chapter 3: Our Own Language</h4>
+                    <span class="chapter-status">Released</span>
+                </div>
+                <span class="status-ready">READ →</span>
+            </a>
+
+            <div class="chapter-card locked">
+                <div class="chapter-info">
+                    <h4>Chapter 4: The Checkmate</h4>
+                    <span class="chapter-status">Arriving in your inbox soon</span>
+                </div>
+                <span>LOCKED</span>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="inner-circle.html" class="return-btn">← RETURN TO INNER CIRCLE VAULT</a>
+        </div>
+    </div>
+
+</body>
+</html>
