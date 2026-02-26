@@ -15,16 +15,17 @@
 
     <style>
         :root {
-            --emerald-bg: #03120a;
-            --gold: #d4af37;
-            --text-light: #e0e0e0;
+            /* INTELLECTUAL & MYSTERIOUS PALETTE */
+            --dark-chocolate: #4A2C2A;  /* Main background */
+            --midnight-blue: #1B263B;   /* Anchoring elements (Nav, Footer, Subscribe) */
+            --accent-light: #E0DCD3;    /* Crisp bone/cream for text and glowing accents */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            background-color: var(--emerald-bg);
-            color: var(--text-light);
+            background-color: var(--dark-chocolate);
+            color: var(--accent-light);
             font-family: 'Playfair Display', serif;
             line-height: 1.8;
             overflow-x: hidden;
@@ -32,18 +33,18 @@
 
         /* PROGRESS BAR */
         .progress-container { width: 100%; height: 3px; background: transparent; position: fixed; top: 0; z-index: 2000; }
-        .progress-bar { height: 3px; background: var(--gold); width: 0%; box-shadow: 0 0 10px var(--gold); }
+        .progress-bar { height: 3px; background: var(--accent-light); width: 0%; box-shadow: 0 0 10px var(--accent-light); }
 
         /* NAVIGATION */
-        nav { position: fixed; top: 3px; width: 100%; background: rgba(3, 18, 10, 0.95); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
-        nav h1 { font-family: 'Cinzel', serif; color: var(--gold); letter-spacing: 2px; font-size: 1.5rem; text-transform: uppercase; }
-        nav .links a { color: var(--text-light); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-family: 'Cinzel', serif; letter-spacing: 1px; transition: color 0.3s; }
-        nav .links a:hover { color: var(--gold); }
+        nav { position: fixed; top: 0px; width: 100%; background: rgba(27, 38, 59, 0.95); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid rgba(224, 220, 211, 0.15); backdrop-filter: blur(5px); }
+        nav h1 { font-family: 'Cinzel', serif; color: var(--accent-light); letter-spacing: 2px; font-size: 1.5rem; text-transform: uppercase; }
+        nav .links a { color: var(--accent-light); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-family: 'Cinzel', serif; letter-spacing: 1px; transition: 0.3s; opacity: 0.7; }
+        nav .links a:hover { opacity: 1; text-shadow: 0 0 8px rgba(224, 220, 211, 0.5); }
 
-        /* HERO */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(3, 18, 10, 0.6), rgba(3, 18, 10, 0.8)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80'); background-size: cover; background-position: center; }
-        .hero h2 { font-family: 'Cinzel', serif; font-size: clamp(3rem, 7vw, 5.5rem); color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; text-shadow: 2px 2px 15px rgba(0,0,0,0.8); }
-        .hero p { font-size: 1.2rem; color: #ccc; font-style: italic; letter-spacing: 1px; }
+        /* HERO - Blending Chocolate and Midnight Blue */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(74, 44, 42, 0.8), rgba(27, 38, 59, 0.9)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80'); background-size: cover; background-position: center; }
+        .hero h2 { font-family: 'Cinzel', serif; font-size: clamp(3rem, 7vw, 5.5rem); color: var(--accent-light); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; text-shadow: 2px 2px 15px rgba(0,0,0,0.8); }
+        .hero p { font-size: 1.2rem; color: var(--accent-light); font-style: italic; letter-spacing: 1px; opacity: 0.85; }
 
         /* REVEALS */
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
@@ -51,12 +52,12 @@
         .delay-1 { transition-delay: 0.2s; }
 
         section { padding: 100px 10%; }
-        h2.section-title { color: var(--gold); font-family: 'Cinzel', serif; font-size: 2rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 50px; }
+        h2.section-title { color: var(--accent-light); font-family: 'Cinzel', serif; font-size: 2rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 50px; text-shadow: 0 0 10px rgba(224, 220, 211, 0.2); }
 
         /* ABOUT */
         .about-container { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
-        .profile-img { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); box-shadow: 0 0 30px rgba(0,0,0,0.8); }
-        .about-text { flex: 1; min-width: 300px; font-size: 1.15rem; }
+        .profile-img { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-light); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+        .about-text { flex: 1; min-width: 300px; font-size: 1.15rem; color: var(--accent-light); opacity: 0.95; }
         .about-text p { margin-bottom: 20px; }
 
         /* NOVELS */
@@ -64,31 +65,34 @@
         .novel-row { display: flex; align-items: center; gap: 60px; }
         .novel-row:nth-child(even) { flex-direction: row-reverse; }
         .novel-details { flex: 1; min-width: 300px; }
-        .novel-title { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-        .novel-cover { width: 300px; height: 450px; object-fit: cover; border: 1px solid rgba(212, 175, 55, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.8); transition: transform 0.4s ease; flex-shrink: 0; }
-        .novel-cover:hover { transform: scale(1.05); }
+        .novel-title { font-family: 'Cinzel', serif; color: var(--accent-light); font-size: 2.2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .novel-cover { width: 300px; height: 450px; object-fit: cover; border: 1px solid rgba(224, 220, 211, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.8); transition: transform 0.4s ease; flex-shrink: 0; }
+        .novel-cover:hover { transform: scale(1.05); border-color: var(--accent-light); box-shadow: 0 15px 35px rgba(224, 220, 211, 0.2); }
         
         /* Novel text formatting */
-        .novel-details p { margin-bottom: 15px; color: #ccc; font-size: 1.1rem; }
+        .novel-details p { margin-bottom: 15px; color: var(--accent-light); font-size: 1.1rem; opacity: 0.85; }
 
         /* BUTTONS */
-        .sneak-peek-btn { margin-top: 25px; padding: 12px 25px; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; cursor: pointer; transition: 0.3s; display: inline-block; text-decoration: none; }
-        .sneak-peek-btn:hover { background: var(--gold); color: #000; }
+        .sneak-peek-btn { margin-top: 25px; padding: 12px 25px; background: transparent; border: 1px solid var(--accent-light); color: var(--accent-light); font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; cursor: pointer; transition: 0.3s; display: inline-block; text-decoration: none; }
+        .sneak-peek-btn:hover { background: var(--accent-light); color: var(--midnight-blue); font-weight: bold; }
 
-        /* SUBSCRIBE */
-        .subscribe-wrapper { background-color: #04180d; padding: 80px 5%; border-radius: 15px; text-align: center; }
+        /* SUBSCRIBE - Anchored in Midnight Blue */
+        .subscribe-wrapper { background-color: var(--midnight-blue); padding: 80px 5%; border-radius: 15px; text-align: center; border: 1px solid rgba(224, 220, 211, 0.15); box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
         .sub-input-group { margin-top: 30px; display: flex; justify-content: center; gap: 0; flex-wrap: wrap; }
-        .subscribe-wrapper input { padding: 15px 20px; width: 300px; background: #000; border: 1px solid #333; color: white; font-size: 1rem; outline: none; }
-        .subscribe-wrapper button { padding: 15px 30px; background: #08331d; border: 1px solid var(--gold); color: var(--gold); font-family: 'Cinzel', serif; font-size: 1rem; cursor: pointer; transition: 0.3s; }
-        .subscribe-wrapper button:hover { background: var(--gold); color: #000; }
+        .subscribe-wrapper input { padding: 15px 20px; width: 300px; background: var(--dark-chocolate); border: 1px solid var(--accent-light); color: var(--accent-light); font-size: 1rem; outline: none; font-family: 'Playfair Display', serif; }
+        .subscribe-wrapper input::placeholder { color: rgba(224, 220, 211, 0.5); }
+        .subscribe-wrapper button { padding: 15px 30px; background: var(--accent-light); border: 1px solid var(--accent-light); color: var(--midnight-blue); font-family: 'Cinzel', serif; font-size: 1rem; cursor: pointer; transition: 0.3s; font-weight: bold; }
+        .subscribe-wrapper button:hover { background: transparent; color: var(--accent-light); }
 
         /* CONTACT */
         .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
-        .contact-item i { font-size: 2.2rem; color: var(--gold); margin-bottom: 15px; }
-        .contact-item a { color: #ccc; text-decoration: none; transition: 0.3s; }
-        .contact-item a:hover { color: var(--gold); }
+        .contact-item i { font-size: 2.2rem; color: var(--accent-light); margin-bottom: 15px; transition: transform 0.3s; opacity: 0.9; }
+        .contact-item:hover i { transform: translateY(-5px); opacity: 1; text-shadow: 0 0 10px rgba(224, 220, 211, 0.5); }
+        .contact-item p { color: var(--accent-light); opacity: 0.85; }
+        .contact-item a { color: var(--accent-light); text-decoration: none; transition: 0.3s; opacity: 0.7; font-weight: bold; }
+        .contact-item a:hover { opacity: 1; }
 
-        footer { text-align: center; padding: 40px 20px; background: #020a05; color: #666; font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid #111; margin-top: 40px; }
+        footer { text-align: center; padding: 40px 20px; background: var(--midnight-blue); color: rgba(224, 220, 211, 0.6); font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid rgba(224, 220, 211, 0.15); margin-top: 40px; }
 
         @media (max-width: 768px) { nav .links { display: none; } .novel-row, .novel-row:nth-child(even) { flex-direction: column; text-align: center; } }
     </style>
@@ -137,7 +141,7 @@
                 <h3 class="novel-title">Almost, Then Always</h3>
                 <p>Elena never meant to fall in love over a chessboard.</p>
                 <p>It was supposed to be a simple friendship—quiet conversations, shared laughter, and games that ended in gentle checkmates. But somewhere between late replies, unspoken fears, and the slow distance that crept between them, love became something heavier than either of them expected.</p>
-                <p>As Elena struggles to hold on and Adrian struggles to understand what he feels, their relationship drifts between closeness and silence, hope and almosts. What begins as a chance meeting becomes a story of timing, vulnerability, and the terrifying honesty that love demands.</p>
+                <p>As Elena struggles to hold on and Adrian struggles to understand what feels, their relationship drifts between closeness and silence, hope and almosts. What begins as a chance meeting becomes a story of timing, vulnerability, and the terrifying honesty that love demands.</p>
                 <p><em>Almost, Then Always</em> is a reflective, deeply emotional journey about loving first, losing slowly, and discovering that sometimes the hardest part isn't letting go—it's learning how to stay.</p>
                 <a href="almost-manuscript.html" class="sneak-peek-btn">DISCOVER NOVEL</a>
             </div>
@@ -185,22 +189,22 @@
 
 <section id="subscribe">
     <div class="subscribe-wrapper reveal">
-        <h2 class="section-title" style="margin-bottom: 10px; text-align: center;">Join The Canopy</h2>
+        <h2 class="section-title" style="margin-bottom: 10px; text-align: center; color: var(--accent-light);">Join The Canopy</h2>
         
         <div id="subscribe-form-container">
-            <p id="sub-description" style="color: #888; margin-bottom: 20px;">Unlock the full Inner Circle dashboard and manuscripts.</p>
+            <p id="sub-description" style="color: var(--accent-light); opacity: 0.85; margin-bottom: 20px;">Unlock the full Inner Circle dashboard and manuscripts.</p>
             <form id="my-form" action="https://formspree.io/f/xdalygyw" method="POST" class="sub-input-group">
                 <input type="email" name="email" placeholder="Enter your email address" required>
                 <button type="submit">SUBSCRIBE</button>
             </form>
             
             <div style="margin-top: 20px;">
-                <a href="#" onclick="forceUnlock(event)" style="color: #666; font-family: 'Playfair Display', serif; font-size: 0.9rem; text-decoration: underline; transition: 0.3s;">Already a subscriber? Click here to unlock this device.</a>
+                <a href="#" onclick="forceUnlock(event)" style="color: var(--accent-light); font-family: 'Playfair Display', serif; font-size: 0.9rem; text-decoration: underline; transition: 0.3s; opacity: 0.7;">Already a subscriber? Click here to unlock this device.</a>
             </div>
         </div>
 
         <div id="already-subscribed-container" style="display: none;">
-            <p style="color: var(--gold); font-size: 1.2rem; margin-bottom: 20px;">Welcome back to the Canopy.</p>
+            <p style="color: var(--accent-light); font-size: 1.2rem; margin-bottom: 20px;">Welcome back to the Canopy.</p>
             <a href="inner-circle.html" class="sneak-peek-btn">ENTER INNER CIRCLE</a>
         </div>
     </div>
