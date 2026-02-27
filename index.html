@@ -107,19 +107,24 @@
 </head>
 <body>
 
-<nav>
+<nav id="navbar">
     <div class="nav-brand">
         <h1>Wild Canopy</h1>
         <span>by Esther Grace Kimotho</span>
     </div>
-    <div class="links">
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="links" id="nav-links">
+        <a href="index.html">Home</a>
         <a href="books.html">Books</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="subscribe.html" class="nav-btn">Subscribe</a>
     </div>
 </nav>
-
 <div class="hero">
     <h2>You call it love.</h2>
     <h3>But love has never felt this quiet before.</h3>
@@ -133,6 +138,26 @@
 <div class="landing-footer">
     © 2026 Esther Grace Kimotho
 </div>
-
+<script>
+    // MOBILE MENU SCRIPT
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    
+    if(mobileMenu) {
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Switch between hamburger and X icon
+            const icon = mobileMenu.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+</script>
 </body>
 </html>

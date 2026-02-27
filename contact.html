@@ -78,12 +78,17 @@
 </head>
 <body style="background-color: var(--midnight-blue);">
 
-<nav id="navbar" class="scrolled">
+<nav id="navbar">
     <div class="nav-brand">
         <h1>Wild Canopy</h1>
         <span>by Esther Grace Kimotho</span>
     </div>
-    <div class="links">
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="links" id="nav-links">
         <a href="index.html">Home</a>
         <a href="books.html">Books</a>
         <a href="about.html">About</a>
@@ -116,7 +121,7 @@
         </div>
     </div>
 
-    <form class="contact-form reveal delay-3" action="https://formspree.io/f/xdalygyw" method="POST">
+    <form id="contact-form" class="contact-form reveal delay-3" action="https://formspree.io/f/xdalygyw" method="POST">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -126,13 +131,34 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" id="submit-btn">Send Message</button>
     </form>
 </section>
 
 <footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
 
 <script>
+    // MOBILE MENU SCRIPT
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    
+    if(mobileMenu) {
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Switch between hamburger and X icon
+            const icon = mobileMenu.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // Scroll Reveals
     document.addEventListener("DOMContentLoaded", function() {
         const reveals = document.querySelectorAll(".reveal");
         const observer = new IntersectionObserver(entries => { 
@@ -143,12 +169,46 @@
         reveals.forEach(reveal => observer.observe(reveal));
     });
 
-    // Form submission feedback
-    var form = document.querySelector(".contact-form");
+    // SILENT BACKGROUND SUBMISSION
+    var form = document.getElementById("contact-form");
     if(form) {
         form.addEventListener("submit", function(e) {
-            var btn = form.querySelector('button');
-            btn.innerHTML = "Sending...";
+            e.preventDefault(); // This stops Formspree from taking over the page!
+            
+            var btn = document.getElementById("submit-btn");
+            var originalText = btn.innerHTML;
+            btn.innerHTML = "Sending..."; // Let the user know it's working
+            btn.style.opacity = "0.7";
+
+            // Send data silently in the background
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    // Success!
+                    btn.innerHTML = "Message Sent!";
+                    btn.style.background = "transparent";
+                    btn.style.color = "var(--accent-light)";
+                    btn.style.opacity = "1";
+                    form.reset(); // Clear the form fields
+                } else {
+                    // Error!
+                    btn.innerHTML = "Oops! Try Again.";
+                    setTimeout(() => { 
+                        btn.innerHTML = originalText; 
+                        btn.style.opacity = "1";
+                    }, 3000);
+                }
+            }).catch(error => {
+                // Network Error!
+                btn.innerHTML = "Oops! Try Again.";
+                setTimeout(() => { 
+                    btn.innerHTML = originalText; 
+                    btn.style.opacity = "1";
+                }, 3000);
+            });
         });
     }
 </script>

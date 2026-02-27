@@ -8,14 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: var(--midnight-blue);">
 
-<nav id="navbar" class="scrolled">
+<nav id="navbar">
     <div class="nav-brand">
         <h1>Wild Canopy</h1>
         <span>by Esther Grace Kimotho</span>
     </div>
-    <div class="links">
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="links" id="nav-links">
         <a href="index.html">Home</a>
         <a href="books.html">Books</a>
         <a href="about.html" style="font-weight: bold; border-bottom: 1px solid var(--accent-light);">About</a>
@@ -23,7 +28,6 @@
         <a href="subscribe.html" class="nav-btn">Subscribe</a>
     </div>
 </nav>
-
 <section class="inner-page">
     <h2 class="section-title reveal">The Voice Behind the Canopy</h2>
     
@@ -49,13 +53,34 @@
 <footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const reveals = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("active"); });
-    }, { threshold: 0.15 });
-    reveals.forEach(reveal => observer.observe(reveal));
-});
+    // MOBILE MENU SCRIPT
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    
+    if(mobileMenu) {
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Switch between hamburger and X icon
+            const icon = mobileMenu.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // SCROLL REVEALS
+    document.addEventListener("DOMContentLoaded", function() {
+        const reveals = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("active"); });
+        }, { threshold: 0.15 });
+        reveals.forEach(reveal => observer.observe(reveal));
+    });
 </script>
 
 </body>
