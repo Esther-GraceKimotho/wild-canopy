@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Wild Canopy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* FORM SPECIFIC STYLES FOR CONTACT PAGE */
+        .contact-form {
+            max-width: 600px;
+            margin: 60px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+        }
+        
+        .contact-form label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            color: var(--accent-light);
+            margin-bottom: -10px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+        
+        .contact-form input, .contact-form textarea {
+            padding: 15px 20px;
+            background: rgba(27,38,59,0.5);
+            border: 1px solid rgba(224, 220, 211, 0.3);
+            color: var(--accent-light);
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s ease;
+        }
+        
+        .contact-form input::placeholder, .contact-form textarea::placeholder {
+            color: rgba(224, 220, 211, 0.4);
+            font-style: italic;
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--accent-light);
+            background: rgba(27,38,59,0.9);
+            box-shadow: 0 0 15px rgba(224, 220, 211, 0.1);
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 160px;
+        }
+        
+        .contact-form button {
+            padding: 18px 40px;
+            font-family: 'Cinzel', serif;
+            border: 1px solid var(--accent-light);
+            background: var(--accent-light);
+            color: var(--midnight-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.4s ease;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .contact-form button:hover {
+            background: transparent;
+            color: var(--accent-light);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body style="background-color: var(--midnight-blue);">
+
+<nav id="navbar" class="scrolled">
+    <div class="nav-brand">
+        <h1>Wild Canopy</h1>
+        <span>by Esther Grace Kimotho</span>
+    </div>
+    <div class="links">
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" style="font-weight: bold; border-bottom: 1px solid var(--accent-light);">Contact</a>
+        <a href="subscribe.html" class="nav-btn">Subscribe</a>
+    </div>
+</nav>
+
+<section class="inner-page">
+    <h2 class="section-title reveal">Reach Out</h2>
+    <p class="section-intro reveal delay-1" style="max-width: 600px; margin: 0 auto 50px;">
+        I welcome readers, collaborators, and fellow explorers of the human heart. Connect with me through any of the channels below, or send a message directly.
+    </p>
+
+    <div class="contact-grid reveal delay-2">
+        <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <p>Email</p>
+            <a href="mailto:esthergracekimotho@gmail.com">esthergracekimotho@gmail.com</a>
+        </div>
+        <div class="contact-item">
+            <i class="fa-brands fa-instagram"></i>
+            <p>Instagram</p>
+            <a href="https://instagram.com/preciousjace715" target="_blank">@preciousjace715</a>
+        </div>
+        <div class="contact-item">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <p>Professional</p>
+            <a href="https://www.linkedin.com/in/esther-grace-nyamwathi" target="_blank">LinkedIn Profile</a>
+        </div>
+    </div>
+
+    <form class="contact-form reveal delay-3" action="https://formspree.io/f/xdalygyw" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const reveals = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(entries => { 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add("active"); 
+            }); 
+        }, { threshold: 0.15 });
+        reveals.forEach(reveal => observer.observe(reveal));
+    });
+
+    // Form submission feedback
+    var form = document.querySelector(".contact-form");
+    if(form) {
+        form.addEventListener("submit", function(e) {
+            var btn = form.querySelector('button');
+            btn.innerHTML = "Sending...";
+        });
+    }
+</script>
+</body>
+</html>

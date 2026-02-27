@@ -3,280 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Esther Grace Kimotho | Kenyan Romance & Fiction Author</title>
-    <meta name="description" content="Official website of Esther Grace Kimotho, Kenyan romance author of Almost, Then Always and Fallen. Explore stories of vulnerability, resilience, and love.">
-    <meta name="keywords" content="Esther Grace Kimotho, Kenyan romance author, African romance fiction, Almost Then Always novel, Fallen novel, The Loop, Wolfire, Kenyatta University writer">
-    <meta name="author" content="Esther Grace Kimotho">
-    <meta name="copyright" content="Esther Grace Kimotho">
-
+    <title>Wild Canopy | Esther Grace Kimotho</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-
     <style>
         :root {
-            /* INTELLECTUAL & MYSTERIOUS PALETTE */
-            --dark-chocolate: #4A2C2A;  /* Main background */
-            --midnight-blue: #1B263B;   /* Anchoring elements (Nav, Footer, Subscribe) */
-            --accent-light: #E0DCD3;    /* Crisp bone/cream for text and glowing accents */
+            --dark-chocolate: #4A2C2A;
+            --midnight-blue: #1B263B;
+            --accent-light: #E0DCD3;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            background-color: var(--dark-chocolate);
-            color: var(--accent-light);
-            font-family: 'Playfair Display', serif;
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-
-        /* PROGRESS BAR */
-        .progress-container { width: 100%; height: 3px; background: transparent; position: fixed; top: 0; z-index: 2000; }
-        .progress-bar { height: 3px; background: var(--accent-light); width: 0%; box-shadow: 0 0 10px var(--accent-light); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body, html { height:100%; font-family:'Playfair Display', serif; background: var(--dark-chocolate); color: var(--accent-light); overflow:hidden; } /* overflow:hidden prevents scrolling on the landing page */
 
         /* NAVIGATION */
-        nav { position: fixed; top: 0px; width: 100%; background: rgba(27, 38, 59, 0.95); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid rgba(224, 220, 211, 0.15); backdrop-filter: blur(5px); }
-        nav h1 { font-family: 'Cinzel', serif; color: var(--accent-light); letter-spacing: 2px; font-size: 1.5rem; text-transform: uppercase; }
-        nav .links a { color: var(--accent-light); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-family: 'Cinzel', serif; letter-spacing: 1px; transition: 0.3s; opacity: 0.7; }
-        nav .links a:hover { opacity: 1; text-shadow: 0 0 8px rgba(224, 220, 211, 0.5); }
-
-        /* HERO - Blending Chocolate and Midnight Blue */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(74, 44, 42, 0.8), rgba(27, 38, 59, 0.9)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80'); background-size: cover; background-position: center; }
-        .hero h2 { font-family: 'Cinzel', serif; font-size: clamp(3rem, 7vw, 5.5rem); color: var(--accent-light); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; text-shadow: 2px 2px 15px rgba(0,0,0,0.8); }
-        .hero p { font-size: 1.2rem; color: var(--accent-light); font-style: italic; letter-spacing: 1px; opacity: 0.85; }
-
-        /* REVEALS */
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-1 { transition-delay: 0.2s; }
-
-        section { padding: 100px 10%; }
-        h2.section-title { color: var(--accent-light); font-family: 'Cinzel', serif; font-size: 2rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 50px; text-shadow: 0 0 10px rgba(224, 220, 211, 0.2); }
-
-        /* ABOUT */
-        .about-container { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
-        .profile-img { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-light); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
-        .about-text { flex: 1; min-width: 300px; font-size: 1.15rem; color: var(--accent-light); opacity: 0.95; }
-        .about-text p { margin-bottom: 20px; }
-
-        /* NOVELS */
-        .novel-showcase { display: flex; flex-direction: column; gap: 100px; margin-top: 40px; }
-        .novel-row { display: flex; align-items: center; gap: 60px; }
-        .novel-row:nth-child(even) { flex-direction: row-reverse; }
-        .novel-details { flex: 1; min-width: 300px; }
-        .novel-title { font-family: 'Cinzel', serif; color: var(--accent-light); font-size: 2.2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-        .novel-cover { width: 300px; height: 450px; object-fit: cover; border: 1px solid rgba(224, 220, 211, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.8); transition: transform 0.4s ease; flex-shrink: 0; }
-        .novel-cover:hover { transform: scale(1.05); border-color: var(--accent-light); box-shadow: 0 15px 35px rgba(224, 220, 211, 0.2); }
+        nav {
+            position: fixed;
+            top:0;
+            width:100%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding: 20px 5%;
+            background: rgba(27,38,59,0.95);
+            z-index:1000;
+            border-bottom:1px solid rgba(224,220,211,0.15);
+            backdrop-filter: blur(5px);
+        }
         
-        /* Novel text formatting */
-        .novel-details p { margin-bottom: 15px; color: var(--accent-light); font-size: 1.1rem; opacity: 0.85; }
+        .nav-brand { display: flex; flex-direction: column; }
+        .nav-brand h1 { font-family:'Cinzel', serif; letter-spacing:2px; font-size: 1.5rem; line-height: 1.1;}
+        .nav-brand span { font-family: 'Playfair Display', serif; font-size: 0.85rem; opacity: 0.7; font-style: italic; }
 
-        /* BUTTONS */
-        .sneak-peek-btn { margin-top: 25px; padding: 12px 25px; background: transparent; border: 1px solid var(--accent-light); color: var(--accent-light); font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; cursor: pointer; transition: 0.3s; display: inline-block; text-decoration: none; }
-        .sneak-peek-btn:hover { background: var(--accent-light); color: var(--midnight-blue); font-weight: bold; }
+        nav .links { display: flex; align-items: center; }
+        nav .links a {
+            color: var(--accent-light);
+            text-decoration:none;
+            margin-left:30px;
+            font-family:'Cinzel', serif;
+            font-size:0.9rem;
+            letter-spacing:1px;
+            transition:0.3s;
+            opacity:0.8;
+        }
+        nav .links a:hover { opacity:1; text-shadow: 0 0 8px rgba(224,220,211,0.5); }
+        
+        .nav-btn {
+            border:1px solid var(--accent-light);
+            padding: 8px 18px;
+            text-transform:uppercase;
+            font-weight:bold;
+            border-radius: 2px;
+        }
+        .nav-btn:hover {
+            background: rgba(224, 220, 211, 0.1);
+        }
 
-        /* SUBSCRIBE - Anchored in Midnight Blue */
-        .subscribe-wrapper { background-color: var(--midnight-blue); padding: 80px 5%; border-radius: 15px; text-align: center; border: 1px solid rgba(224, 220, 211, 0.15); box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
-        .sub-input-group { margin-top: 30px; display: flex; justify-content: center; gap: 0; flex-wrap: wrap; }
-        .subscribe-wrapper input { padding: 15px 20px; width: 300px; background: var(--dark-chocolate); border: 1px solid var(--accent-light); color: var(--accent-light); font-size: 1rem; outline: none; font-family: 'Playfair Display', serif; }
-        .subscribe-wrapper input::placeholder { color: rgba(224, 220, 211, 0.5); }
-        .subscribe-wrapper button { padding: 15px 30px; background: var(--accent-light); border: 1px solid var(--accent-light); color: var(--midnight-blue); font-family: 'Cinzel', serif; font-size: 1rem; cursor: pointer; transition: 0.3s; font-weight: bold; }
-        .subscribe-wrapper button:hover { background: transparent; color: var(--accent-light); }
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            background: linear-gradient(rgba(74,44,42,0.85), rgba(27,38,59,0.95)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80') no-repeat center/cover;
+            padding:0 20px;
+        }
+        .hero h2 { font-size: clamp(3rem, 7vw, 5rem); margin-bottom:15px; text-shadow: 2px 2px 20px rgba(0,0,0,0.9); font-weight: 400;}
+        .hero h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-style:italic; margin-bottom:40px; opacity:0.85; text-shadow:1px 1px 10px rgba(0,0,0,0.8); font-weight: 400;}
+        .hero p { max-width:600px; font-size:1.15rem; margin-bottom:50px; opacity:0.8; line-height:1.8; letter-spacing: 1px;}
+        
+        .hero-buttons a {
+            padding:15px 45px;
+            margin:0 15px;
+            border:1px solid var(--accent-light);
+            text-decoration:none;
+            text-transform:uppercase;
+            font-family:'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--accent-light);
+            transition:0.4s ease;
+            display: inline-block;
+        }
+        .hero-buttons a.primary-btn:hover { background: var(--accent-light); color: var(--midnight-blue); font-weight: bold; transform: translateY(-3px);}
+        .hero-buttons a.secondary-btn { opacity: 0.8; }
+        .hero-buttons a.secondary-btn:hover { opacity: 1; background: rgba(224, 220, 211, 0.05); box-shadow:0 0 15px rgba(224,220,211,0.2); transform: translateY(-3px);}
 
-        /* CONTACT */
-        .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
-        .contact-item i { font-size: 2.2rem; color: var(--accent-light); margin-bottom: 15px; transition: transform 0.3s; opacity: 0.9; }
-        .contact-item:hover i { transform: translateY(-5px); opacity: 1; text-shadow: 0 0 10px rgba(224, 220, 211, 0.5); }
-        .contact-item p { color: var(--accent-light); opacity: 0.85; }
-        .contact-item a { color: var(--accent-light); text-decoration: none; transition: 0.3s; opacity: 0.7; font-weight: bold; }
-        .contact-item a:hover { opacity: 1; }
-
-        footer { text-align: center; padding: 40px 20px; background: var(--midnight-blue); color: rgba(224, 220, 211, 0.6); font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid rgba(224, 220, 211, 0.15); margin-top: 40px; }
-
-        @media (max-width: 768px) { nav .links { display: none; } .novel-row, .novel-row:nth-child(even) { flex-direction: column; text-align: center; } }
+        /* TINY FOOTER */
+        .landing-footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            text-transform: uppercase;
+        }
     </style>
 </head>
-
 <body>
 
-<div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
-
 <nav>
-    <h1>Wild Canopy</h1>
+    <div class="nav-brand">
+        <h1>Wild Canopy</h1>
+        <span>by Esther Grace Kimotho</span>
+    </div>
     <div class="links">
-        <a href="#about">ABOUT</a>
-        <a href="#novels">NOVELS</a>
-        <a href="#subscribe">SUBSCRIBE</a>
-        <a href="#contact">CONTACT</a>
+        <a href="books.html">Books</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="subscribe.html" class="nav-btn">Subscribe</a>
     </div>
 </nav>
 
 <div class="hero">
-    <h2 class="reveal">Where Stories Grow Untamed</h2>
-    <p class="reveal delay-1">A sanctuary for the vulnerable and the bold.</p>
+    <h2>You call it love.</h2>
+    <h3>But love has never felt this quiet before.</h3>
+    <p>Fiction exploring love, obsession, vulnerability, and the psychology of human connection.</p>
+    <div class="hero-buttons">
+        <a href="books.html" class="primary-btn">Explore the Books</a>
+        <a href="subscribe.html" class="secondary-btn">Join the Canopy</a>
+    </div>
 </div>
 
-<section id="about">
-    <h2 class="section-title reveal">The Author</h2>
-    <div class="about-container">
-        <img src="ESTHER.jpeg" alt="Esther Grace Kimotho" class="profile-img reveal">
-        <div class="about-text reveal delay-1">
-            <p>Wild Canopy is a space where words grow wild, and stories breathe &mdash; a place where emotion meets reflection, and imagination finds its home. Here, I explore the human experience in all its depth: love, longing, vulnerability, and the quiet strength that carries us forward.</p>
-            <p>I am a writer and a law student, navigating the intersection of reason and feeling. My legal studies sharpen my understanding of justice, morality, and human complexity, while my writing gives voice to the hearts and stories that law alone cannot capture.</p>
-            <p>From <em>Almost, Then Always</em> to <em>Fallen</em>, <em>All Because of Him</em>, <em>The Loop</em>, and <em>Wolfire</em>, each story is a journey &mdash; a reflection on choices, consequences, and the enduring power of resilience. Through prose that is both deliberate and lyrical, I aim to illuminate the spaces where hearts struggle, grow, and heal.</p>
-            <p>Wild Canopy is for readers who seek depth, beauty, and truth in storytelling &mdash; a canopy under which every emotion is honored, every story cherished.</p>
-            <p>Welcome. Explore. Let the stories linger.</p>
-        </div>
-    </div>
-</section>
+<div class="landing-footer">
+    © 2026 Esther Grace Kimotho
+</div>
 
-<section id="novels">
-    <h2 class="section-title reveal" style="text-align: center;">The Collections</h2>
-    <div class="novel-showcase">
-        
-        <div class="novel-row reveal">
-            <img src="almost, then always.jpeg" class="novel-cover" alt="Almost, Then Always">
-            <div class="novel-details">
-                <h3 class="novel-title">Almost, Then Always</h3>
-                <p>Elena never meant to fall in love over a chessboard.</p>
-                <p>It was supposed to be a simple friendship—quiet conversations, shared laughter, and games that ended in gentle checkmates. But somewhere between late replies, unspoken fears, and the slow distance that crept between them, love became something heavier than either of them expected.</p>
-                <p>As Elena struggles to hold on and Adrian struggles to understand what feels, their relationship drifts between closeness and silence, hope and almosts. What begins as a chance meeting becomes a story of timing, vulnerability, and the terrifying honesty that love demands.</p>
-                <p><em>Almost, Then Always</em> is a reflective, deeply emotional journey about loving first, losing slowly, and discovering that sometimes the hardest part isn't letting go—it's learning how to stay.</p>
-                <a href="almost-manuscript.html" class="sneak-peek-btn">DISCOVER NOVEL</a>
-            </div>
-        </div>
-
-        <div class="novel-row reveal">
-            <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&q=80" class="novel-cover" alt="Fallen Cover by Esther Grace Kimotho">
-            <div class="novel-details">
-                <h3 class="novel-title">Fallen</h3>
-                <p>What we desire most is not always what we truly need, but coming to terms with this truth is a battle even the strongest hearts must face.</p>
-                <p>Zara Frost stands at the crossroads of this struggle, her soul torn between longing and reality. Against all odds, she wrestles with the weight of her choices, fighting to reconcile her dreams with the path unfolding before her.</p>
-                <a href="fallen.html" class="sneak-peek-btn">DISCOVER NOVEL</a>
-            </div>
-        </div>
-
-        <div class="novel-row reveal">
-            <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80" class="novel-cover" alt="All Because of Him Cover">
-            <div class="novel-details">
-                <h3 class="novel-title">All Because of Him</h3>
-                <p>One person. One choice. A ripple that changes everything. Explore the aftermath of a single encounter that rewrote the stars.</p>
-                <a href="all-because-of-him.html" class="sneak-peek-btn">COMING SOON</a>
-            </div>
-        </div>
-
-        <div class="novel-row reveal">
-            <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?auto=format&fit=crop&q=80" class="novel-cover" alt="The Loop Cover">
-            <div class="novel-details">
-                <h3 class="novel-title">The Loop</h3>
-                <p>When time repeats itself, love becomes both memory and prison. Can you break the cycle without breaking the heart?</p>
-                <a href="the-loop.html" class="sneak-peek-btn">COMING SOON</a>
-            </div>
-        </div>
-
-        <div class="novel-row reveal">
-            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80" class="novel-cover" alt="Wolfire Cover">
-            <div class="novel-details">
-                <h3 class="novel-title">Wolfire</h3>
-                <p>Wild instincts. Burning loyalty. A love that howls in the dark and fights for its place in the world.</p>
-                <a href="wolfire.html" class="sneak-peek-btn">COMING SOON</a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<section id="subscribe">
-    <div class="subscribe-wrapper reveal">
-        <h2 class="section-title" style="margin-bottom: 10px; text-align: center; color: var(--accent-light);">Join The Canopy</h2>
-        
-        <div id="subscribe-form-container">
-            <p id="sub-description" style="color: var(--accent-light); opacity: 0.85; margin-bottom: 20px;">Unlock the full Inner Circle dashboard and manuscripts.</p>
-            <form id="my-form" action="https://formspree.io/f/xdalygyw" method="POST" class="sub-input-group">
-                <input type="email" name="email" placeholder="Enter your email address" required>
-                <button type="submit">SUBSCRIBE</button>
-            </form>
-            
-            <div style="margin-top: 20px;">
-                <a href="#" onclick="forceUnlock(event)" style="color: var(--accent-light); font-family: 'Playfair Display', serif; font-size: 0.9rem; text-decoration: underline; transition: 0.3s; opacity: 0.7;">Already a subscriber? Click here to unlock this device.</a>
-            </div>
-        </div>
-
-        <div id="already-subscribed-container" style="display: none;">
-            <p style="color: var(--accent-light); font-size: 1.2rem; margin-bottom: 20px;">Welcome back to the Canopy.</p>
-            <a href="inner-circle.html" class="sneak-peek-btn">ENTER INNER CIRCLE</a>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <h2 class="section-title reveal" style="text-align: center;">Reach Out</h2>
-    <div class="contact-grid">
-        <div class="contact-item reveal delay-1"><i class="fa-solid fa-phone"></i><p>Direct Dial</p><p>0108784546</p></div>
-        <div class="contact-item reveal delay-2"><i class="fa-brands fa-instagram"></i><p>Instagram</p><a href="https://instagram.com/preciousjace715" target="_blank">@preciousjace715</a></div>
-        <div class="contact-item reveal delay-3"><i class="fa-brands fa-linkedin-in"></i><p>Professional</p><a href="https://www.linkedin.com/in/esther-grace-nyamwathi" target="_blank">LinkedIn Profile</a></div>
-    </div>
-</section>
-
-<footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
-
-<script>
-    // PROGRESS BAR
-    window.onscroll = function() {
-        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        document.getElementById("myBar").style.width = (winScroll / height) * 100 + "%";
-    };
-
-    // SCROLL REVEALS
-    document.addEventListener("DOMContentLoaded", function() {
-        const reveals = document.querySelectorAll(".reveal");
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("active"); });
-        }, { threshold: 0.15 });
-        reveals.forEach(reveal => observer.observe(reveal));
-    });
-
-    // CHECK IF ALREADY VIP ON PAGE LOAD
-    function checkVip() {
-        if (localStorage.getItem('subscribedToCanopy') === 'true') {
-            document.getElementById('subscribe-form-container').style.display = 'none';
-            document.getElementById('already-subscribed-container').style.display = 'block';
-        }
-    }
-    window.addEventListener('pageshow', checkVip);
-
-    // MANUAL UNLOCK FUNCTION (For the new text link)
-    function forceUnlock(e) {
-        e.preventDefault();
-        localStorage.setItem('subscribedToCanopy', 'true');
-        window.location.href = "inner-circle.html";
-    }
-
-    // FORM SUBMISSION (Bulletproof Version)
-    var form = document.getElementById("my-form");
-    if(form) {
-        form.addEventListener("submit", function(e) {
-            e.preventDefault();
-            var btn = form.querySelector('button');
-            btn.innerHTML = "Opening the canopy...";
-
-            // DROP THE KEY IMMEDIATELY (Do not wait for Formspree)
-            localStorage.setItem('subscribedToCanopy', 'true');
-
-            // SEND DATA TO FORMSPREE IN THE BACKGROUND AND REDIRECT
-            fetch(e.target.action, {
-                method: "POST", 
-                body: new FormData(e.target), 
-                headers: { 'Accept': 'application/json' }
-            }).then(() => {
-                window.location.href = "inner-circle.html"; 
-            }).catch(() => {
-                window.location.href = "inner-circle.html"; 
-            });
-        });
-    }
-</script>
 </body>
 </html>

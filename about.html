@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Wild Canopy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="navbar" class="scrolled">
+    <div class="nav-brand">
+        <h1>Wild Canopy</h1>
+        <span>by Esther Grace Kimotho</span>
+    </div>
+    <div class="links">
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="about.html" style="font-weight: bold; border-bottom: 1px solid var(--accent-light);">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="subscribe.html" class="nav-btn">Subscribe</a>
+    </div>
+</nav>
+
+<section class="inner-page">
+    <h2 class="section-title reveal">The Voice Behind the Canopy</h2>
+    
+    <div class="about-grid" style="margin-top: 30px;">
+        <img src="ESTHER.jpeg" alt="Esther Grace Kimotho" class="author-photo reveal delay-1">
+        
+        <div class="about-text reveal delay-2">
+            <p>I am <strong>Esther Grace Kimotho</strong>, a writer who explores the delicate spaces where hearts falter, dreams collide with reality, and desire intertwines with reflection. Through stories that are at once intimate and profound, I seek to illuminate the human experience—love, longing, vulnerability, and resilience.</p>
+            
+            <p>As a law student, I navigate the intersections of reason, justice, and morality. This discipline sharpens my understanding of human complexity, informing the depth and authenticity of my writing. Yet, while the law interprets the world, my stories <em>feel it</em>—every whispered thought, every unspoken tension, every moment where choice becomes consequence.</p>
+            
+            <p>At <strong>Wild Canopy</strong>, words grow wild, and emotion finds its home. My novels—from <em>Almost, Then Always</em> to <em>Fallen</em>, <em>All Because of Him</em>, <em>The Loop</em>, and <em>Wolfire</em>—are explorations of timing, obsession, hope, and the fragility of the human heart. Each story invites readers to dwell in the spaces between what is said and what is felt, to confront truths that linger in silence, and to emerge transformed.</p>
+            
+            <p>This is a space for readers who crave depth, reflection, and the quiet power of storytelling. Here, stories are not just read—they are <em>experienced</em>, lingered with, and remembered.</p>
+            
+            <p style="font-family: 'Cinzel', serif; margin-top: 35px; font-size: 0.95rem; letter-spacing: 1.5px; opacity: 0.9;">
+                Welcome to Wild Canopy. Step inside. <br>Let the words breathe, and let the stories linger.
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("active"); });
+    }, { threshold: 0.15 });
+    reveals.forEach(reveal => observer.observe(reveal));
+});
+</script>
+
+</body>
+</html>
