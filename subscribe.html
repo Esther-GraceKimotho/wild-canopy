@@ -117,5 +117,40 @@
         });
     }
 </script>
+<script>
+    // Select the toggle button and nav links container
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav .links');
+
+    // When the toggle is clicked, add/remove the 'active' class
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Optional: close menu when a link is clicked (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Reveal animation for sections
+    document.addEventListener("DOMContentLoaded", function() {
+        const reveals = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(entries => { 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add("active"); 
+            }); 
+        }, { threshold: 0.15 });
+        reveals.forEach(reveal => observer.observe(reveal));
+    });
+</script>
 </body>
 </html>
