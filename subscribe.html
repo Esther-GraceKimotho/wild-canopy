@@ -1,75 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join the Canopy | Wild Canopy</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-:root {
-    --dark-chocolate: #4A2C2A;
-    --midnight-blue: #1B263B;
-    --accent-light: #E0DCD3;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Playfair Display', serif; background: var(--dark-chocolate); color: var(--accent-light); overflow-x:hidden; display: flex; flex-direction: column; min-height: 100vh; }
-
-nav {
-    position:fixed; top:0; width:100%; display:flex; justify-content:space-between; align-items:center;
-    padding:20px 5%; background: rgba(27,38,59,0.95); z-index:2000; border-bottom:1px solid rgba(224,220,211,0.15); backdrop-filter:blur(5px);
-}
-.nav-brand { display: flex; flex-direction: column; z-index: 2001; position: relative; }
-.nav-brand h1 { font-family:'Cinzel', serif; letter-spacing:2px; font-size: 1.5rem; line-height: 1.1; margin: 0;}
-.nav-brand span { font-family: 'Playfair Display', serif; font-size: 0.85rem; opacity: 0.7; font-style: italic; }
-
-nav .links { display: flex; align-items: center; }
-nav .links a { color: var(--accent-light); text-decoration:none; margin-left:30px; font-family:'Cinzel', serif; font-size:0.9rem; letter-spacing: 1px; opacity:0.8; transition:0.3s;}
-nav .links a:hover { opacity:1; text-shadow:0 0 8px rgba(224,220,211,0.5);}
-
-.menu-toggle { display: none; color: var(--accent-light); font-size: 1.8rem; cursor: pointer; z-index: 2001; position: relative; transition: 0.3s; }
-
-.subscribe-wrapper { flex: 1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding: 120px 20px 60px 20px; }
-.subscribe-wrapper h2 { font-family: 'Cinzel', serif; font-size:3.5rem; margin-bottom:15px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 20px rgba(0,0,0,0.5);}
-.subscribe-wrapper p { max-width:550px; font-size:1.15rem; opacity:0.85; margin-bottom:40px; line-height:1.8; }
-
-.subscribe-wrapper form { display:flex; flex-direction:column; gap:20px; align-items:center; width: 100%; }
-.subscribe-wrapper input { padding:18px 25px; width: 100%; max-width: 400px; background: rgba(27,38,59,0.5); border:1px solid rgba(224,220,211,0.4); color: var(--accent-light); font-size:1rem; font-family:'Playfair Display', serif; text-align: center; }
-.subscribe-wrapper input::placeholder { color: rgba(224,220,211,0.5);}
-.subscribe-wrapper input:focus { outline: none; border-color: var(--accent-light); background: var(--midnight-blue); }
-
-.subscribe-wrapper button { padding:18px 45px; border:1px solid var(--accent-light); background: var(--accent-light); color: var(--midnight-blue); font-family:'Cinzel', serif; font-size: 1rem; cursor:pointer; font-weight:bold; letter-spacing: 2px; text-transform: uppercase; transition:0.4s ease;}
-.subscribe-wrapper button:hover { background:transparent; color: var(--accent-light); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-
-.login-link { margin-top: 30px; color: rgba(224, 220, 211, 0.6); font-family: 'Playfair Display', serif; font-size: 0.95rem; text-decoration: underline; transition: 0.3s; cursor: pointer; }
-.login-link:hover { color: var(--accent-light); }
-
-footer { text-align:center; padding:40px 20px; background: var(--midnight-blue); color: rgba(224,220,211,0.5); font-family:'Cinzel', serif; font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; border-top:1px solid rgba(224,220,211,0.1); width: 100%; }
-
-/* MOBILE RESPONSIVENESS & CASCADING MENU */
-@media(max-width:768px){ 
-    .menu-toggle { display: block; }
-    
-    nav .links { 
-        position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(27, 38, 59, 0.98); 
-        flex-direction: column; justify-content: center; align-items: center; gap: 40px; 
-        transform: translateY(-100%); transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1); z-index: 1500; 
-    }
-    nav .links.active { transform: translateY(0); }
-    nav .links a { margin: 0; font-size: 1.8rem; opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; }
-    nav .links.active a { opacity: 1; transform: translateY(0); }
-    
-    nav .links.active a:nth-child(1) { transition-delay: 0.2s; }
-    nav .links.active a:nth-child(2) { transition-delay: 0.3s; }
-    nav .links.active a:nth-child(3) { transition-delay: 0.4s; }
-    nav .links.active a:nth-child(4) { transition-delay: 0.5s; }
-    nav .links.active a:nth-child(5) { transition-delay: 0.6s; }
-
-    .subscribe-wrapper h2 { font-size: 2.5rem; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Canopy | Wild Canopy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: var(--midnight-blue);">
 
 <nav id="navbar">
     <div class="nav-brand">
@@ -87,7 +26,7 @@ footer { text-align:center; padding:40px 20px; background: var(--midnight-blue);
         <a href="books.html">Books</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="subscribe.html" style="font-weight: bold; border-bottom: 1px solid var(--accent-light);">Subscribe</a>
+        <a href="subscribe.html" class="nav-btn" style="font-weight: bold; border-bottom: 1px solid var(--accent-light);">Subscribe</a>
     </div>
 </nav>
 
@@ -109,10 +48,10 @@ footer { text-align:center; padding:40px 20px; background: var(--midnight-blue);
     </div>
 </div>
 
-<footer>© 2026 Esther Grace Kimotho. All rights reserved.</footer>
+<footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
 
 <script>
-    // MOBILE MENU SCRIPT
+    // --- MOBILE MENU SCRIPT ---
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
     
@@ -132,7 +71,13 @@ footer { text-align:center; padding:40px 20px; background: var(--midnight-blue);
         });
     }
 
-    // CHECK VIP STATUS ON PAGE LOAD
+    // --- NAVBAR SCROLL EFFECT ---
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if(nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // --- CHECK VIP STATUS ON PAGE LOAD ---
     function checkVip() {
         if (localStorage.getItem('subscribedToCanopy') === 'true') {
             document.getElementById('subscribe-form-container').style.display = 'none';
@@ -141,14 +86,14 @@ footer { text-align:center; padding:40px 20px; background: var(--midnight-blue);
     }
     window.addEventListener('pageshow', checkVip);
 
-    // MANUAL UNLOCK FOR RETURNING USERS
+    // --- MANUAL UNLOCK FOR RETURNING USERS ---
     function forceUnlock(e) {
         e.preventDefault();
         localStorage.setItem('subscribedToCanopy', 'true');
         window.location.href = "inner-circle.html";
     }
 
-    // INTERCEPT FORM SUBMISSION TO DROP KEY & REDIRECT
+    // --- INTERCEPT FORM SUBMISSION TO DROP KEY & REDIRECT ---
     var form = document.getElementById("my-form");
     if(form) {
         form.addEventListener("submit", function(e) {
