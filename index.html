@@ -36,24 +36,37 @@
         A sanctuary for the vulnerable and the bold. Explore stories of longing, desire, vulnerability, and the subtle battles of the heart.
     </p>
     <div class="hero-buttons reveal delay-2">
-        <a href="books.html" class="hero-btn primary-btn">Explore the Books</a>
+        <a href="inner-circle.html" class="hero-btn primary-btn" id="vip-btn" style="display: none; background: var(--accent-light); color: var(--midnight-blue); font-weight: bold; box-shadow: 0 0 20px rgba(224, 220, 211, 0.4);">Enter The Canopy</a>
+        
+        <a href="books.html" class="hero-btn primary-btn" id="public-btn">Explore the Books</a>
+        
         <a href="about.html" class="hero-btn secondary-btn">Meet the Author</a>
     </div>
 </header>
+
 <footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
 
 <script>
-    // Select the toggle button and nav links container
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('nav .links');
+    // --- CHECK VIP STATUS ON HOMEPAGE ---
+    function checkHomeVip() {
+        if (localStorage.getItem('subscribedToCanopy') === 'true') {
+            document.getElementById('public-btn').style.display = 'none';
+            document.getElementById('vip-btn').style.display = 'inline-block';
+        }
+    }
+    // Run the check as soon as the page loads
+    window.addEventListener('pageshow', checkHomeVip);
 
-    // When the toggle is clicked, add/remove the 'active' class
-    if(menuToggle) {
-        menuToggle.addEventListener('click', () => {
+    // --- MOBILE MENU SCRIPT ---
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    
+    if(mobileMenu) {
+        mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             
             // Switch between hamburger and X icon
-            const icon = menuToggle.querySelector('i');
+            const icon = mobileMenu.querySelector('i');
             if(navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-xmark');
@@ -64,35 +77,17 @@
         });
     }
 
-    // Optional: close menu when a link is clicked (mobile)
-    if(navLinks) {
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
-                }
-            });
-        });
-    }
-
-    // Navbar scroll effect
+    // --- NAVBAR SCROLL EFFECT ---
     window.addEventListener('scroll', () => {
-        const nav = document.querySelector('nav');
-        if(nav) {
-            nav.classList.toggle('scrolled', window.scrollY > 50);
-        }
+        const nav = document.getElementById('navbar');
+        if(nav) nav.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Reveal animation for sections
+    // --- SCROLL REVEAL ANIMATIONS ---
     document.addEventListener("DOMContentLoaded", function() {
         const reveals = document.querySelectorAll(".reveal");
         const observer = new IntersectionObserver(entries => { 
-            entries.forEach(entry => { 
-                if (entry.isIntersecting) entry.target.classList.add("active"); 
-            }); 
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("active"); }); 
         }, { threshold: 0.15 });
         reveals.forEach(reveal => observer.observe(reveal));
     });
