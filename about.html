@@ -29,6 +29,7 @@
         <a href="subscribe.html" class="nav-btn">Subscribe</a>
     </div>
 </nav>
+
 <section class="inner-page">
     <h2 class="section-title reveal">The Voice Behind the Canopy</h2>
     
@@ -54,16 +55,15 @@
 <footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
 
 <script>
-    // MOBILE MENU SCRIPT
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.getElementById('nav-links');
-    
-    if(mobileMenu) {
-        mobileMenu.addEventListener('click', () => {
+    // --- INTERACTIVE FEATURES SCRIPT ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav .links');
+
+    // Mobile Menu Toggle logic
+    if(menuToggle) {
+        menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            
-            // Switch between hamburger and X icon
-            const icon = mobileMenu.querySelector('i');
+            const icon = menuToggle.querySelector('i');
             if(navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-xmark');
@@ -74,11 +74,35 @@
         });
     }
 
-    // SCROLL REVEALS
+    // Close menu when a mobile link is clicked
+    if(navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if(nav) {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        }
+    });
+
+    // Reveal animation for sections
     document.addEventListener("DOMContentLoaded", function() {
         const reveals = document.querySelectorAll(".reveal");
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("active"); });
+        const observer = new IntersectionObserver(entries => { 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add("active"); 
+            }); 
         }, { threshold: 0.15 });
         reveals.forEach(reveal => observer.observe(reveal));
     });

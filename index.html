@@ -50,23 +50,23 @@
     // --- CHECK VIP STATUS ON HOMEPAGE ---
     function checkHomeVip() {
         if (localStorage.getItem('subscribedToCanopy') === 'true') {
-            document.getElementById('public-btn').style.display = 'none';
-            document.getElementById('vip-btn').style.display = 'inline-block';
+            const publicBtn = document.getElementById('public-btn');
+            const vipBtn = document.getElementById('vip-btn');
+            if(publicBtn) publicBtn.style.display = 'none';
+            if(vipBtn) vipBtn.style.display = 'inline-block';
         }
     }
-    // Run the check as soon as the page loads
     window.addEventListener('pageshow', checkHomeVip);
 
-    // --- MOBILE MENU SCRIPT ---
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.getElementById('nav-links');
-    
-    if(mobileMenu) {
-        mobileMenu.addEventListener('click', () => {
+    // --- INTERACTIVE FEATURES SCRIPT ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav .links');
+
+    // Mobile Menu Toggle
+    if(menuToggle) {
+        menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            
-            // Switch between hamburger and X icon
-            const icon = mobileMenu.querySelector('i');
+            const icon = menuToggle.querySelector('i');
             if(navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-xmark');
@@ -77,17 +77,35 @@
         });
     }
 
-    // --- NAVBAR SCROLL EFFECT ---
+    // Close menu when link is clicked
+    if(navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
+
+    // Navbar scroll effect
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('navbar');
-        if(nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+        if(nav) {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        }
     });
 
-    // --- SCROLL REVEAL ANIMATIONS ---
+    // Reveal animation for sections
     document.addEventListener("DOMContentLoaded", function() {
         const reveals = document.querySelectorAll(".reveal");
         const observer = new IntersectionObserver(entries => { 
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("active"); }); 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add("active"); 
+            }); 
         }, { threshold: 0.15 });
         reveals.forEach(reveal => observer.observe(reveal));
     });
