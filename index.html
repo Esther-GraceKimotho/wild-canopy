@@ -6,104 +6,7 @@
     <title>Wild Canopy | Esther Grace Kimotho</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --dark-chocolate: #4A2C2A;
-            --midnight-blue: #1B263B;
-            --accent-light: #E0DCD3;
-        }
-
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body, html { height:100%; font-family:'Playfair Display', serif; background: var(--dark-chocolate); color: var(--accent-light); overflow:hidden; } /* overflow:hidden prevents scrolling on the landing page */
-
-        /* NAVIGATION */
-        nav {
-            position: fixed;
-            top:0;
-            width:100%;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding: 20px 5%;
-            background: rgba(27,38,59,0.95);
-            z-index:1000;
-            border-bottom:1px solid rgba(224,220,211,0.15);
-            backdrop-filter: blur(5px);
-        }
-        
-        .nav-brand { display: flex; flex-direction: column; }
-        .nav-brand h1 { font-family:'Cinzel', serif; letter-spacing:2px; font-size: 1.5rem; line-height: 1.1;}
-        .nav-brand span { font-family: 'Playfair Display', serif; font-size: 0.85rem; opacity: 0.7; font-style: italic; }
-
-        nav .links { display: flex; align-items: center; }
-        nav .links a {
-            color: var(--accent-light);
-            text-decoration:none;
-            margin-left:30px;
-            font-family:'Cinzel', serif;
-            font-size:0.9rem;
-            letter-spacing:1px;
-            transition:0.3s;
-            opacity:0.8;
-        }
-        nav .links a:hover { opacity:1; text-shadow: 0 0 8px rgba(224,220,211,0.5); }
-        
-        .nav-btn {
-            border:1px solid var(--accent-light);
-            padding: 8px 18px;
-            text-transform:uppercase;
-            font-weight:bold;
-            border-radius: 2px;
-        }
-        .nav-btn:hover {
-            background: rgba(224, 220, 211, 0.1);
-        }
-
-        /* HERO SECTION */
-        .hero {
-            height: 100vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            background: linear-gradient(rgba(74,44,42,0.85), rgba(27,38,59,0.95)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80') no-repeat center/cover;
-            padding:0 20px;
-        }
-        .hero h2 { font-size: clamp(3rem, 7vw, 5rem); margin-bottom:15px; text-shadow: 2px 2px 20px rgba(0,0,0,0.9); font-weight: 400;}
-        .hero h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-style:italic; margin-bottom:40px; opacity:0.85; text-shadow:1px 1px 10px rgba(0,0,0,0.8); font-weight: 400;}
-        .hero p { max-width:600px; font-size:1.15rem; margin-bottom:50px; opacity:0.8; line-height:1.8; letter-spacing: 1px;}
-        
-        .hero-buttons a {
-            padding:15px 45px;
-            margin:0 15px;
-            border:1px solid var(--accent-light);
-            text-decoration:none;
-            text-transform:uppercase;
-            font-family:'Cinzel', serif;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            color: var(--accent-light);
-            transition:0.4s ease;
-            display: inline-block;
-        }
-        .hero-buttons a.primary-btn:hover { background: var(--accent-light); color: var(--midnight-blue); font-weight: bold; transform: translateY(-3px);}
-        .hero-buttons a.secondary-btn { opacity: 0.8; }
-        .hero-buttons a.secondary-btn:hover { opacity: 1; background: rgba(224, 220, 211, 0.05); box-shadow:0 0 15px rgba(224,220,211,0.2); transform: translateY(-3px);}
-
-        /* TINY FOOTER */
-        .landing-footer {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            font-family: 'Cinzel', serif;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            opacity: 0.5;
-            text-transform: uppercase;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -119,37 +22,40 @@
     </div>
 
     <div class="links" id="nav-links">
-        <a href="index.html">Home</a>
+        <a href="index.html" style="font-weight: bold; border-bottom: 1px solid var(--accent-light);">Home</a>
         <a href="books.html">Books</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="subscribe.html" class="nav-btn">Subscribe</a>
     </div>
 </nav>
-<div class="hero">
-    <h2>You call it love.</h2>
-    <h3>But love has never felt this quiet before.</h3>
-    <p>Fiction exploring love, obsession, vulnerability, and the psychology of human connection.</p>
-    <div class="hero-buttons">
-        <a href="books.html" class="primary-btn">Explore the Books</a>
-        <a href="subscribe.html" class="secondary-btn">Join the Canopy</a>
-    </div>
-</div>
 
-<div class="landing-footer">
-    © 2026 Esther Grace Kimotho
-</div>
+<header class="hero">
+    <h1 class="hero-headline reveal">Wild Canopy</h1>
+    <p class="hero-subline reveal delay-1">Where Stories Grow Untamed</p>
+    <p class="hero-description reveal delay-2">
+        A sanctuary for the vulnerable and the bold. Explore stories of longing, desire, vulnerability, and the subtle battles of the heart.
+    </p>
+    <div class="hero-buttons reveal delay-3">
+        <a href="books.html" class="hero-btn primary-btn">Explore the Books</a>
+        <a href="about.html" class="hero-btn secondary-btn">Meet the Author</a>
+    </div>
+</header>
+
+<footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
+
 <script>
-    // MOBILE MENU SCRIPT
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.getElementById('nav-links');
-    
-    if(mobileMenu) {
-        mobileMenu.addEventListener('click', () => {
+    // Select the toggle button and nav links container
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav .links');
+
+    // When the toggle is clicked, add/remove the 'active' class
+    if(menuToggle) {
+        menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             
             // Switch between hamburger and X icon
-            const icon = mobileMenu.querySelector('i');
+            const icon = menuToggle.querySelector('i');
             if(navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-xmark');
@@ -159,6 +65,40 @@
             }
         });
     }
+
+    // Optional: close menu when a link is clicked (mobile)
+    if(navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if(nav) {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        }
+    });
+
+    // Reveal animation for sections
+    document.addEventListener("DOMContentLoaded", function() {
+        const reveals = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(entries => { 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add("active"); 
+            }); 
+        }, { threshold: 0.15 });
+        reveals.forEach(reveal => observer.observe(reveal));
+    });
 </script>
+
 </body>
 </html>
