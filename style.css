@@ -27,17 +27,17 @@ nav.scrolled {
 
 .nav-brand { z-index: 2001; position: relative; display: flex; align-items: center; }
 .nav-logo { 
-    height: 70px; /* Adjust this number if you want the logo bigger or smaller */
-    width: auto; 
+    height: 60px !important; /* Forces it to stay exactly this height */
+    max-height: 60px !important;
+    width: auto !important;
+    object-fit: contain; /* Prevents the image from stretching */
     transition: transform 0.4s ease, filter 0.4s ease;
-    /* This shadows the actual gold shapes, not the square image box! */
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5)); 
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); 
 }
 .nav-logo:hover { 
     transform: scale(1.05); 
-    filter: drop-shadow(0 6px 12px rgba(224, 220, 211, 0.2)); 
+    filter: drop-shadow(0 4px 10px rgba(224, 220, 211, 0.3)); 
 }
-
 nav .links { display: flex; align-items: center; gap: 30px; }
 nav .links a { color: var(--accent-light); text-decoration: none; font-size: 0.9rem; font-family: 'Cinzel', serif; letter-spacing: 1px; transition: 0.3s; opacity: 0.8; }
 nav .links a:hover { opacity: 1; text-shadow: 0 0 8px rgba(224, 220, 211, 0.4); }
