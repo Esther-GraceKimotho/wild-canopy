@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books | Wild Canopy</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+    --dark-chocolate: #4A2C2A;
+    --midnight-blue: #1B263B;
+    --accent-light: #E0DCD3;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Playfair Display', serif; background: var(--dark-chocolate); color: var(--accent-light); line-height:1.8; overflow-x:hidden; display: flex; flex-direction: column; min-height: 100vh; }
+
+/* NAVIGATION */
+nav {
+    position:fixed; top:0; width:100%; display:flex; justify-content:space-between; align-items:center;
+    padding:20px 5%; background: rgba(27,38,59,0.95); z-index:1000; border-bottom:1px solid rgba(224,220,211,0.15); backdrop-filter:blur(5px);
+}
+.nav-brand { display: flex; flex-direction: column; }
+.nav-brand h1 { font-family:'Cinzel', serif; letter-spacing:2px; font-size: 1.5rem; line-height: 1.1; margin: 0;}
+.nav-brand span { font-family: 'Playfair Display', serif; font-size: 0.85rem; opacity: 0.7; font-style: italic; }
+
+nav .links { display: flex; align-items: center; }
+nav .links a { color: var(--accent-light); text-decoration:none; margin-left:30px; font-family:'Cinzel', serif; font-size:0.9rem; letter-spacing: 1px; opacity:0.8; transition:0.3s;}
+nav .links a:hover { opacity:1; text-shadow:0 0 8px rgba(224,220,211,0.5);}
+
+.nav-btn { border:1px solid var(--accent-light); padding:8px 18px; text-transform:uppercase; font-weight:bold; border-radius: 2px; }
+.nav-btn:hover { background: rgba(224, 220, 211, 0.1); }
+
+/* CONTENT */
+section { padding:140px 10% 80px; text-align:center; flex: 1; }
+h2.section-title { font-family:'Cinzel', serif; font-size:2.5rem; margin-bottom:10px; letter-spacing:2px; text-transform:uppercase; }
+p.section-intro { font-size:1.15rem; opacity:0.85; margin-bottom:60px; font-style: italic; }
+
+.book-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:50px; }
+.book-card { background: rgba(27,38,59,0.7); padding:20px; border-radius:10px; width:300px; display: flex; flex-direction: column; align-items: center; transition:0.4s; border: 1px solid rgba(224,220,211,0.05); }
+.book-card:hover { background: rgba(27,38,59,0.9); box-shadow:0 15px 35px rgba(0,0,0,0.5); transform: translateY(-5px); border-color: rgba(224,220,211,0.2); }
+
+.book-cover { width:100%; height:400px; object-fit:cover; border-radius:5px; margin-bottom:20px; border: 1px solid rgba(224,220,211,0.2); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.book-title { font-family:'Cinzel', serif; font-size:1.4rem; margin-bottom:10px; color: var(--accent-light); }
+.book-hook { font-style:italic; font-size:1rem; opacity:0.85; margin-bottom:25px; line-height: 1.6; }
+
+.discover-btn { display:inline-block; margin-top: auto; padding:12px 25px; border:1px solid var(--accent-light); color: var(--accent-light); text-decoration:none; text-transform:uppercase; font-family:'Cinzel', serif; font-size:0.85rem; letter-spacing: 2px; transition:0.3s;}
+.discover-btn:hover { background: var(--accent-light); color: var(--midnight-blue); font-weight: bold; }
+
+footer { text-align:center; padding:40px 20px; background: var(--midnight-blue); color: rgba(224,220,211,0.5); font-family:'Cinzel', serif; font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; border-top:1px solid rgba(224,220,211,0.1); width: 100%; }
+
+@media(max-width:768px){ 
+    nav .links { display: none; }
+    .book-grid { flex-direction:column; align-items:center; } 
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-brand">
+        <h1>Wild Canopy</h1>
+        <span>by Esther Grace Kimotho</span>
+    </div>
+    <div class="links">
+        <a href="index.html">Home</a>
+        <a href="books.html" style="font-weight: bold; border-bottom: 1px solid var(--accent-light); opacity: 1;">Books</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="subscribe.html" class="nav-btn">Subscribe</a>
+    </div>
+</nav>
+
+<section>
+    <h2 class="section-title">The Canopy</h2>
+    <p class="section-intro">Explore stories of longing, desire, vulnerability, and the subtle battles of the heart.</p>
+    
+    <div class="book-grid">
+        <div class="book-card">
+            <img src="almost, then always.jpeg" alt="Almost, Then Always" class="book-cover">
+            <h3 class="book-title">Almost, Then Always</h3>
+            <p class="book-hook">Love fades in the spaces between them.</p>
+            <a href="almost-manuscript.html" class="discover-btn">Discover Novel</a>
+        </div>
+        
+        <div class="book-card">
+            <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&q=80" alt="Fallen" class="book-cover">
+            <h3 class="book-title">Fallen</h3>
+            <p class="book-hook">Coming to terms with desire is a battle even the strongest hearts must fight.</p>
+            <a href="fallen.html" class="discover-btn">Discover Novel</a>
+        </div>
+
+        <div class="book-card">
+            <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80" alt="All Because of Him" class="book-cover">
+            <h3 class="book-title">All Because of Him</h3>
+            <p class="book-hook">One choice. One ripple. Everything changes.</p>
+            <a href="all-because-of-him.html" class="discover-btn">Coming Soon</a>
+        </div>
+
+        <div class="book-card">
+            <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?auto=format&fit=crop&q=80" alt="The Loop" class="book-cover">
+            <h3 class="book-title">The Loop</h3>
+            <p class="book-hook">When time repeats itself, love becomes both memory and prison.</p>
+            <a href="the-loop.html" class="discover-btn">Coming Soon</a>
+        </div>
+
+        <div class="book-card">
+            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80" alt="Wolfire" class="book-cover">
+            <h3 class="book-title">Wolfire</h3>
+            <p class="book-hook">Wild instincts. Burning loyalty. A love that howls in the dark.</p>
+            <a href="wolfire.html" class="discover-btn">Coming Soon</a>
+        </div>
+    </div>
+</section>
+
+<footer>© 2026 Esther Grace Kimotho. All rights reserved.</footer>
+
+</body>
+</html>
