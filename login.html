@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter the Vault | Wild Canopy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-chocolate: #4A2C2A;  
+            --midnight-blue: #1B263B;   
+            --accent-light: #E0DCD3;    
+        }
+        body {
+            background-color: var(--midnight-blue);
+            color: var(--accent-light);
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .login-box {
+            background: rgba(27, 38, 59, 0.8);
+            padding: 50px;
+            border: 1px solid rgba(224, 220, 211, 0.2);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+            border-radius: 5px;
+            max-width: 400px;
+            width: 90%;
+        }
+        h2 { font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 10px; letter-spacing: 2px; }
+        p { opacity: 0.8; margin-bottom: 30px; }
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--accent-light);
+            color: var(--accent-light);
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            letter-spacing: 2px;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background: var(--accent-light);
+            color: var(--midnight-blue);
+            border: none;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: white; }
+        #error-msg {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            display: none;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+        .back-link {
+            display: block;
+            margin-top: 30px;
+            color: rgba(224, 220, 211, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { color: var(--accent-light); }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h2>The Vault</h2>
+        <p>Enter the secret key from your welcome email to access the Inner Circle.</p>
+        
+        <input type="password" id="vault-pass" placeholder="ENTER KEY">
+        <button onclick="checkPassword()">UNLOCK</button>
+        
+        <div id="error-msg">Incorrect key. Subscribe to the Canopy to receive the password!</div>
+        
+        <a href="subscribe.html" class="back-link">← I don't have a key yet</a>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var pass = document.getElementById("vault-pass").value;
+            // CHANGE "CANOPY2026" TO WHATEVER PASSWORD YOU WANT TO USE
+            if (pass === "CANOPY2026") {
+                window.location.href = "inner-circle.html";
+            } else {
+                document.getElementById("error-msg").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
