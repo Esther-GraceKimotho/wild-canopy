@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wild Canopy | Esther Grace Kimotho</title>
+    
+    <meta name="description" content="Wild Canopy by Esther Grace Kimotho — Romantic psychological fiction exploring love, obsession, vulnerability, and the psychology of connection.">
+    <meta name="keywords" content="Esther Grace Kimotho, Romantic Fiction Author, Psychological Fiction, Love Stories, Wild Canopy">
+    <meta name="author" content="Esther Grace Kimotho">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -26,23 +31,45 @@
         <a href="books.html">Books</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="subscribe.html" class="nav-btn">Subscribe</a>
     </div>
 </nav>
 
 <header class="hero">
-    <h1 class="hero-headline reveal" style="font-size: clamp(2.5rem, 5vw, 4rem);">Where Stories Grow Untamed</h1>
-    <p class="hero-description reveal delay-1" style="font-size: 1.2rem; max-width: 650px; margin: 0 auto 40px auto;">
-        A sanctuary for the vulnerable and the bold. Explore stories of longing, desire, vulnerability, and the subtle battles of the heart.
+    <h1 class="hero-headline reveal">
+        You call it love.<br>
+        But love has never felt this quiet before.
+    </h1>
+
+    <p class="brand-positioning reveal delay-1">
+        Romantic psychological fiction exploring love, obsession, vulnerability, and the spaces between words.
     </p>
+
     <div class="hero-buttons reveal delay-2">
-        <a href="inner-circle.html" class="hero-btn primary-btn" id="vip-btn" style="display: none; background: var(--accent-light); color: var(--midnight-blue); font-weight: bold; box-shadow: 0 0 20px rgba(224, 220, 211, 0.4);">Enter The Canopy</a>
-        
-        <a href="books.html" class="hero-btn primary-btn" id="public-btn">Explore the Books</a>
-        
-        <a href="about.html" class="hero-btn secondary-btn">Meet the Author</a>
+        <a href="inner-circle.html" class="hero-btn primary-btn" id="vip-btn" style="display: none; background: var(--accent-light); color: var(--midnight-blue); font-weight: bold; box-shadow: 0 0 20px rgba(224, 220, 211, 0.4);">
+            Enter The Canopy
+        </a>
+
+        <a href="books.html" class="hero-btn primary-btn" id="public-btn">
+            Explore the Books
+        </a>
+
+        <a href="about.html" class="hero-btn secondary-btn">
+            Meet the Author
+        </a>
     </div>
 </header>
+
+<section class="lead-magnet reveal">
+    <h2>Enter the Inner Circle</h2>
+    <p>
+        Receive an exclusive short story and early access to upcoming releases.
+    </p>
+
+    <form action="https://github.us1.list-manage.com/subscribe/post?u=39d089739639d08fa9c15dce8&amp;id=7e512e2ef2&amp;f_id=005525e1f0" method="POST" class="email-form" id="homepage-subscribe-form">
+        <input type="email" name="EMAIL" placeholder="Your email address" required>
+        <button type="submit">Join the Canopy</button>
+    </form>
+</section>
 
 <footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
 
@@ -54,6 +81,10 @@
             const vipBtn = document.getElementById('vip-btn');
             if(publicBtn) publicBtn.style.display = 'none';
             if(vipBtn) vipBtn.style.display = 'inline-block';
+            
+            // Hide the lead magnet if they are already subscribed
+            const leadMagnet = document.querySelector('.lead-magnet');
+            if(leadMagnet) leadMagnet.style.display = 'none';
         }
     }
     window.addEventListener('pageshow', checkHomeVip);
@@ -62,7 +93,6 @@
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('nav .links');
 
-    // Mobile Menu Toggle
     if(menuToggle) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -77,7 +107,6 @@
         });
     }
 
-    // Close menu when link is clicked
     if(navLinks) {
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
@@ -91,7 +120,6 @@
         });
     }
 
-    // Navbar scroll effect
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('navbar');
         if(nav) {
@@ -99,7 +127,6 @@
         }
     });
 
-    // Reveal animation for sections
     document.addEventListener("DOMContentLoaded", function() {
         const reveals = document.querySelectorAll(".reveal");
         const observer = new IntersectionObserver(entries => { 
@@ -109,6 +136,28 @@
         }, { threshold: 0.15 });
         reveals.forEach(reveal => observer.observe(reveal));
     });
+
+    // --- SILENT FORM SUBMISSION FOR LEAD MAGNET ---
+    var homeForm = document.getElementById("homepage-subscribe-form");
+    if(homeForm) {
+        homeForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            var btn = homeForm.querySelector('button');
+            btn.innerHTML = "Opening vault...";
+            
+            localStorage.setItem('subscribedToCanopy', 'true');
+
+            fetch(e.target.action, { 
+                method: "POST", 
+                body: new FormData(e.target), 
+                headers: { 'Accept': 'application/json' } 
+            }).then(() => { 
+                window.location.href = "inner-circle.html"; 
+            }).catch(() => { 
+                window.location.href = "inner-circle.html"; 
+            });
+        });
+    }
 </script>
 
 </body>
