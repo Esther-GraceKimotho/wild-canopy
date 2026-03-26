@@ -45,50 +45,14 @@
     </p>
 
     <div class="hero-buttons reveal delay-2">
-        <a href="inner-circle.html" class="hero-btn primary-btn" id="vip-btn" style="display: none; background: var(--accent-light); color: var(--midnight-blue); font-weight: bold; box-shadow: 0 0 20px rgba(224, 220, 211, 0.4);">
-            Enter The Canopy
-        </a>
-
-        <a href="books.html" class="hero-btn primary-btn" id="public-btn">
-            Explore the Books
-        </a>
-
-        <a href="about.html" class="hero-btn secondary-btn">
-            Meet the Author
-        </a>
+        <a href="books.html" class="hero-btn primary-btn">Explore the Books</a>
+        <a href="about.html" class="hero-btn secondary-btn">Meet the Author</a>
     </div>
 </header>
-
-<section class="lead-magnet reveal">
-    <h2>Enter the Inner Circle</h2>
-    <p>
-        Receive an exclusive short story and early access to upcoming releases.
-    </p>
-
-    <form action="https://github.us1.list-manage.com/subscribe/post?u=39d089739639d08fa9c15dce8&amp;id=7e512e2ef2&amp;f_id=005525e1f0" method="POST" class="email-form" id="homepage-subscribe-form">
-        <input type="email" name="EMAIL" placeholder="Your email address" required>
-        <button type="submit">Join the Canopy</button>
-    </form>
-</section>
 
 <footer><p>© 2026 Esther Grace Kimotho. All rights reserved.</p></footer>
 
 <script>
-    // --- CHECK VIP STATUS ON HOMEPAGE ---
-    function checkHomeVip() {
-        if (localStorage.getItem('subscribedToCanopy') === 'true') {
-            const publicBtn = document.getElementById('public-btn');
-            const vipBtn = document.getElementById('vip-btn');
-            if(publicBtn) publicBtn.style.display = 'none';
-            if(vipBtn) vipBtn.style.display = 'inline-block';
-            
-            // Hide the lead magnet if they are already subscribed
-            const leadMagnet = document.querySelector('.lead-magnet');
-            if(leadMagnet) leadMagnet.style.display = 'none';
-        }
-    }
-    window.addEventListener('pageshow', checkHomeVip);
-
     // --- INTERACTIVE FEATURES SCRIPT ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('nav .links');
@@ -136,28 +100,6 @@
         }, { threshold: 0.15 });
         reveals.forEach(reveal => observer.observe(reveal));
     });
-
-    // --- SILENT FORM SUBMISSION FOR LEAD MAGNET ---
-    var homeForm = document.getElementById("homepage-subscribe-form");
-    if(homeForm) {
-        homeForm.addEventListener("submit", function(e) {
-            e.preventDefault();
-            var btn = homeForm.querySelector('button');
-            btn.innerHTML = "Opening vault...";
-            
-            localStorage.setItem('subscribedToCanopy', 'true');
-
-            fetch(e.target.action, { 
-                method: "POST", 
-                body: new FormData(e.target), 
-                headers: { 'Accept': 'application/json' } 
-            }).then(() => { 
-                window.location.href = "inner-circle.html"; 
-            }).catch(() => { 
-                window.location.href = "inner-circle.html"; 
-            });
-        });
-    }
 </script>
 
 </body>

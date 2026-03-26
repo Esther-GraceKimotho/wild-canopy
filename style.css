@@ -222,10 +222,23 @@ footer { text-align: center; padding: 40px 20px; background: #131A28; color: rgb
     
     .nav-btn { font-size: 1.2rem !important; padding: 15px 40px !important; }
     .about-grid, .about-text { text-align: center; } 
-    .hero-headline { font-size: 3.5rem; } 
     .book-grid { flex-direction:column; align-items:center; }
+    
+    /* THE MOBILE OVERLAP FIX */
+    .hero { 
+        min-height: 100vh; /* Allows the section to grow if content is tall */
+        height: auto; 
+        padding-top: 150px; 
+        padding-bottom: 80px; 
+    }
+    .hero-headline { 
+        font-size: 2.2rem; /* Shrinks the massive text down to fit */
+        margin-bottom: 1rem;
+    }
+    .brand-positioning {
+        margin-bottom: 50px;
+    }
 }
-
 /* --- LEAD MAGNET SECTION --- */
 .lead-magnet {
     text-align: center;
