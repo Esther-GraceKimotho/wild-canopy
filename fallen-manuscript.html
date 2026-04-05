@@ -9,33 +9,189 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     
     <style>
-        :root { --emerald-bg: #03120a; --gold: #d4af37; --text-light: #e0e0e0; --paper: #0a1c12; }
-        body { background-color: var(--emerald-bg); color: var(--text-light); font-family: 'Lora', serif; line-height: 1.8; margin: 0; padding: 0; }
-        
-        .hub-container { max-width: 900px; margin: 50px auto; padding: 40px; background: rgba(10, 28, 18, 0.8); border: 1px solid var(--gold); box-shadow: 0 0 50px rgba(0,0,0,0.9); }
-        
-        .manuscript-header { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 30px; }
-        .manuscript-header img { width: 120px; height: 180px; object-fit: cover; border: 1px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-        .manuscript-header h1 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.2rem; margin: 0 0 10px 0; text-transform: uppercase; }
-        .manuscript-header p { font-family: 'Playfair Display', serif; color: #888; font-style: italic; margin: 0; font-size: 1.1rem; }
+        :root {
+            /* INTELLECTUAL & MYSTERIOUS PALETTE */
+            --dark-chocolate: #4A2C2A;  
+            --midnight-blue: #1B263B;   
+            --accent-light: #E0DCD3;    
+        }
 
-        .chapter-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 50px; }
-        .chapter-card { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); text-decoration: none; color: var(--text-light); transition: 0.3s; }
-        .chapter-card:hover { border-color: var(--gold); transform: translateX(10px); background: rgba(212, 175, 55, 0.05); }
-        .chapter-card.locked { opacity: 0.5; cursor: default; }
-        .chapter-card.locked:hover { transform: none; border-color: rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); }
-        
-        .chapter-info h4 { font-family: 'Cinzel', serif; margin: 0; font-size: 1.2rem; color: var(--gold); }
-        .chapter-status { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 1px; color: #888; }
-        .status-ready { color: var(--gold); font-weight: bold; letter-spacing: 1px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--dark-chocolate);
+            color: var(--accent-light);
+            font-family: 'Playfair Display', serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
 
-        .footer-links { text-align: center; margin-top: 40px; border-top: 1px solid rgba(212, 175, 55, 0.2); padding-top: 30px; }
-        .return-btn { color: var(--gold); text-decoration: none; font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; }
-        .return-btn:hover { color: #fff; }
+        .hub-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: var(--midnight-blue);
+            border: 1px solid rgba(224, 220, 211, 0.15);
+            border-radius: 5px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
 
-        @media (max-width: 600px) {
-            .manuscript-header { flex-direction: column; text-align: center; }
-            .chapter-card { flex-direction: column; text-align: center; gap: 15px; }
+        .manuscript-header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(224, 220, 211, 0.2);
+        }
+
+        .manuscript-header img {
+            width: 150px;
+            height: 225px;
+            object-fit: cover;
+            border: 1px solid rgba(224, 220, 211, 0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .manuscript-header h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-light);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(224, 220, 211, 0.2);
+        }
+
+        .manuscript-header p {
+            font-size: 1.2rem;
+            color: rgba(224, 220, 211, 0.8);
+            font-style: italic;
+        }
+
+        .chapter-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .chapter-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: rgba(74, 44, 42, 0.4); 
+            border: 1px solid rgba(224, 220, 211, 0.1);
+            text-decoration: none;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
+        .chapter-card:hover {
+            background: rgba(224, 220, 211, 0.05);
+            border-color: rgba(224, 220, 211, 0.4);
+            transform: translateX(5px);
+        }
+
+        .chapter-info h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-light);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .chapter-status {
+            font-size: 0.85rem;
+            color: rgba(224, 220, 211, 0.6);
+            font-family: 'Lora', serif;
+        }
+
+        .status-ready {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-light);
+            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .chapter-card:hover .status-ready {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(224, 220, 211, 0.5);
+        }
+
+        /* --- FRAGMENT END SECTION --- */
+        .fragment-end {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 50px;
+            border-top: 1px dashed rgba(224, 220, 211, 0.3);
+        }
+
+        .fragment-end h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-light);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .fragment-end p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .buy-amazon-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--accent-light);
+            color: var(--midnight-blue);
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 2px;
+            border: 1px solid var(--accent-light);
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .buy-amazon-btn:hover {
+            background: transparent;
+            color: var(--accent-light);
+        }
+
+        .footer-links {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .return-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--accent-light);
+            border: 1px solid var(--accent-light);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .return-btn:hover {
+            background: var(--accent-light);
+            color: var(--midnight-blue);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hub-container { margin: 20px; padding: 20px; }
+            .manuscript-header { flex-direction: column; text-align: center; gap: 20px; }
+            .chapter-card { flex-direction: column; gap: 15px; text-align: center; }
         }
     </style>
 </head>
@@ -47,30 +203,33 @@
             <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&q=80" alt="Fallen Cover">
             <div>
                 <h1>Fallen</h1>
-                <p>"A descent into vulnerability, where breaking becomes becoming."</p>
+                <p>"Coming to terms with desire is a battle even the strongest hearts must fight."</p>
             </div>
         </div>
 
         <div class="chapter-grid">
-            <a href="fallen-prologue.html" class="chapter-card">
-                <div class="chapter-info">
-                    <h4>Prologue: The Descent</h4>
-                    <span class="chapter-status">Released</span>
-                </div>
+            <a href="fallen-chapter-1.html" class="chapter-card">
+                <div class="chapter-info"><h4>Chapter 1: The Name I Never Forgot</h4><span class="chapter-status">Released</span></div>
                 <span class="status-ready">READ →</span>
             </a>
+            <a href="fallen-chapter-2.html" class="chapter-card">
+                <div class="chapter-info"><h4>Chapter 2: The Welcome Back</h4><span class="chapter-status">Released</span></div>
+                <span class="status-ready">READ →</span>
+            </a>
+            <a href="fallen-chapter-3.html" class="chapter-card">
+                <div class="chapter-info"><h4>Chapter 3: Familiar Strangers</h4><span class="chapter-status">Released</span></div>
+                <span class="status-ready">READ →</span>
+            </a>
+        </div>
 
-            <div class="chapter-card locked">
-                <div class="chapter-info">
-                    <h4>Chapter 1: Gravity</h4>
-                    <span class="chapter-status">In Development</span>
-                </div>
-                <span>LOCKED</span>
-            </div>
+        <div class="fragment-end">
+            <h3>The Story Is Just Beginning</h3>
+            <p>The battle of the heart continues in the full novel. Discover the rest of the story and the secrets waiting in the dark.</p>
+            <a href="https://amazon.com/YOUR_BOOK_LINK" target="_blank" class="buy-amazon-btn">Get the Book on Amazon</a>
         </div>
 
         <div class="footer-links">
-            <a href="inner-circle.html" class="return-btn">← RETURN TO INNER CIRCLE VAULT</a>
+            <a href="books.html" class="return-btn">← RETURN TO THE CANOPY</a>
         </div>
     </div>
 
